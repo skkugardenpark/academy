@@ -11,22 +11,28 @@ export const metadata: Metadata = {
     icon: [
       {
         url: '/favicon.ico',
-        sizes: 'any',
+        sizes: '16x16',
+        type: 'image/x-icon',
       },
       {
-        url: '/icon.png',
+        url: '/icon-16.png',
+        sizes: '16x16',
         type: 'image/png',
+      },
+      {
+        url: '/icon-32.png',
         sizes: '32x32',
+        type: 'image/png',
       },
       {
         url: '/icon-192.png',
-        type: 'image/png',
         sizes: '192x192',
+        type: 'image/png',
       },
       {
         url: '/icon-512.png',
-        type: 'image/png',
         sizes: '512x512',
+        type: 'image/png',
       },
     ],
     apple: {
@@ -34,7 +40,14 @@ export const metadata: Metadata = {
       type: 'image/png',
       sizes: '180x180',
     },
+    shortcut: [
+      {
+        url: '/favicon.ico',
+        sizes: '16x16',
+      },
+    ],
   },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
@@ -44,6 +57,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="16x16" />
+        <link rel="icon" href="/icon-32.png" sizes="32x32" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
