@@ -10,24 +10,24 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#8BE8CB',
-          dark: '#5AC4A8',
-          light: '#A5F0D8'
+          DEFAULT: '#00A3FF',
+          dark: '#0081CC',
+          light: '#33B5FF'
         },
         secondary: {
-          DEFAULT: '#6C63FF',
-          dark: '#4B44CC',
-          light: '#8A84FF'
+          DEFAULT: '#FF6B6B',
+          dark: '#FF4F4F',
+          light: '#FF8787'
         },
         dark: {
-          DEFAULT: '#040D21',
-          light: '#0A1930',
-          lighter: '#162B4D'
+          DEFAULT: '#1A1A2E',
+          light: '#242442',
+          lighter: '#2E2E5C'
         },
         mint: {
-          DEFAULT: '#8BE8CB',
-          dark: '#5AC4A8',
-          light: '#A5F0D8'
+          DEFAULT: '#00E5BE',
+          dark: '#00B598',
+          light: '#33EACC'
         },
         gold: {
           DEFAULT: '#D4AF37',
@@ -35,9 +35,10 @@ const config: Config = {
           dark: '#B69329',
         },
         accent: {
-          blue: '#4A90E2',
-          purple: '#9B51E0',
-          teal: '#2DD4BF',
+          yellow: '#FFD93D',
+          purple: '#6C63FF',
+          pink: '#FF6B6B',
+          green: '#4CAF50'
         },
       },
       fontFamily: {
@@ -63,8 +64,9 @@ const config: Config = {
         'gold': '0 4px 14px 0 rgba(212, 175, 55, 0.25)',
         'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.15)',
         'shadow-glass': '0 8px 32px 0 rgba(31, 38, 135, 0.15)',
-        'glow': '0 0 20px rgba(74, 144, 226, 0.3)',
-        'inner-glow': 'inset 0 2px 4px 0 rgba(255, 255, 255, 0.05)',
+        'glow': '0 0 20px rgba(0, 163, 255, 0.3)',
+        'glow-strong': '0 0 30px rgba(0, 163, 255, 0.5)',
+        'inner-glow': 'inset 0 0 20px rgba(0, 163, 255, 0.2)'
       },
       backdropBlur: {
         'glass': '8px',
@@ -101,14 +103,14 @@ const config: Config = {
           '100%': { backgroundPosition: '0% 50%' },
         },
         shimmer: {
-          '0%': { backgroundPosition: '-1000px 0' },
-          '100%': { backgroundPosition: '1000px 0' },
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
         },
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-glass': 'linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%)',
+        'gradient-glass': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
         'shimmer': 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%)',
         'grid': "url('/patterns/grid.svg')"
       },
