@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --primary: #0B2545;
-  --mint: #E1F5F2;
-  --gold: #D4AF37;
+  --primary: #00A3FF;
+  --mint: #00E5BE;
+  --gold: #FFD93D;
 }
 
 html {
@@ -35,7 +35,7 @@ body {
 
 /* Gradient Text */
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent-blue to-accent-purple
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-mint to-accent-purple
          animate-gradient bg-[length:200%_auto];
 }
 
@@ -149,7 +149,7 @@ input, textarea, select {
 /* 다크모드 지원 */
 @media (prefers-color-scheme: dark) {
   body {
-    @apply bg-gray-900 text-white;
+    @apply bg-dark text-white;
   }
   
   .glass-effect {
