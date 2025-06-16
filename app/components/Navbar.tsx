@@ -27,20 +27,21 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/80 backdrop-blur-lg shadow-sm' : 'bg-transparent'
+      isScrolled ? 'bg-white shadow-sm' : 'bg-white/50 backdrop-blur-sm'
     }`}>
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/images/logo.svg"
-              alt="English Academy Logo"
-              width={200}
-              height={50}
-              className="h-8 w-auto"
-              priority
-            />
+          <Link href="/" className="flex items-center py-2">
+            <div className="relative w-[180px] h-[40px]">
+              <Image
+                src="/images/logo.svg"
+                alt="English Academy Logo"
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -89,7 +90,7 @@ export default function Navbar() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden"
+              className="md:hidden bg-white"
             >
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {navItems.map((item) => (
