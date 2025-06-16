@@ -22,7 +22,8 @@ body {
 
 /* Glass Effect */
 .glass-effect {
-  @apply backdrop-blur-[8px] bg-gradient-glass border border-white/20 shadow-glass;
+  @apply backdrop-blur-[8px] border border-white/20 shadow-glass;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
 }
 
 /* Hover Effects */
