@@ -19,16 +19,20 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0)
+      setIsScrolled(window.scrollY > 50)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-sm' : 'bg-white/50 backdrop-blur-sm'
-    }`}>
+    <nav 
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white shadow-sm' 
+          : 'bg-transparent'
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -50,19 +54,28 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-slate-600 hover:text-primary transition-colors"
+                className={`transition-colors ${
+                  isScrolled 
+                    ? 'text-slate-600 hover:text-primary' 
+                    : 'text-white hover:text-white/80'
+                }`}
               >
                 {item.label}
               </Link>
             ))}
-            <button className="btn-primary">
+            <button className={`${
+              isScrolled 
+                ? 'btn-primary' 
+                : 'bg-white/10 hover:bg-white/20 text-white border-white/20'
+              } px-6 py-2 rounded-full font-semibold transition-all duration-300`}
+            >
               무료 레벨 테스트
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-slate-600"
+            className={`md:hidden ${isScrolled ? 'text-slate-600' : 'text-white'}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <svg
