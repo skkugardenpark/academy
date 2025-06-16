@@ -10,6 +10,7 @@ import GallerySection from './components/sections/GallerySection'
 import FAQSection from './components/sections/FAQSection'
 import LocationSection from './components/sections/LocationSection'
 import ContactSection from './components/sections/ContactSection'
+import TestimonialsSection from './components/sections/TestimonialsSection'
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <CurriculumSection />
       <InstructorsSection />
       <GallerySection />
+      <TestimonialsSection />
       <FAQSection />
       <LocationSection />
       <ContactSection />
