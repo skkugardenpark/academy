@@ -9,26 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: '#00A3FF',
-          dark: '#0081CC',
-          light: '#33B5FF'
-        },
-        secondary: {
-          DEFAULT: '#FF6B6B',
-          dark: '#FF4F4F',
-          light: '#FF8787'
-        },
-        dark: {
-          DEFAULT: '#1A1A2E',
-          light: '#242442',
-          lighter: '#2E2E5C'
-        },
-        mint: {
-          DEFAULT: '#00E5BE',
-          dark: '#00B598',
-          light: '#33EACC'
-        },
+        primary: '#FF8C8C',
+        secondary: '#FFB6B6',
+        mint: '#A8E6CF',
+        'mint-light': '#D4F5E9',
+        dark: '#4A5568',
+        'dark-light': '#718096',
         gold: {
           DEFAULT: '#D4AF37',
           light: '#F4E9C1',

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-50 to-mint/30">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-mint-light/50 to-secondary/20">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('/patterns/hero-pattern.svg')] opacity-5" />
       
