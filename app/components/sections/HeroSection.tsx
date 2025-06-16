@@ -1,4 +1,4 @@
-import { motion, Transition } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Button from '../common/Button'
 import AnimatedSection from '../common/AnimatedSection'
 

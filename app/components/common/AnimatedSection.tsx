@@ -1,4 +1,4 @@
-import { motion, Transition, Variants } from 'framer-motion'
+import { motion, Transition } from 'framer-motion'
 import { ReactNode } from 'react'
 
 interface AnimatedSectionProps {
