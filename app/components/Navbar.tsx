@@ -36,11 +36,11 @@ export default function Navbar() {
             <Image
               src="/images/logo.svg"
               alt="English Academy Logo"
-              width={40}
-              height={40}
-              className="h-10 w-auto"
+              width={200}
+              height={50}
+              className="h-8 w-auto"
+              priority
             />
-            <span className="ml-3 text-xl font-bold text-navy">English Academy</span>
           </Link>
 
           {/* Desktop Navigation */}

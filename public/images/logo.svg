@@ -1,6 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <path d="M50 5L90 25V75L50 95L10 75V25L50 5Z" stroke="#1E3A8A" stroke-width="4"/>
-  <path d="M35 35C35 30 40 25 50 25C60 25 65 30 65 35C65 45 35 45 35 55C35 60 40 65 50 65C60 65 65 60 65 55" stroke="#1E3A8A" stroke-width="4" stroke-linecap="round"/>
-  <rect x="30" y="30" width="40" height="40" rx="5" stroke="#1E3A8A" stroke-width="4"/>
-  <path d="M50 25V75" stroke="#1E3A8A" stroke-width="4"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
+  <!-- 육각형 로고 -->
+  <path d="M25 5L45 15V35L25 45L5 35V15L25 5Z" fill="white" stroke="#1E3A8A" stroke-width="2"/>
+  <path d="M25 10L40 18V32L25 40L10 32V18L25 10Z" fill="#1E3A8A"/>
+  
+  <!-- 책 아이콘 -->
+  <path d="M25 15V35M17 20H33M17 30H33" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- 텍스트 -->
+  <text x="60" y="32" font-family="Arial" font-size="24" font-weight="bold" fill="#1E3A8A">English Academy</text>
 </svg> 
