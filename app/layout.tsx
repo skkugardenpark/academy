@@ -1,9 +1,9 @@
 import './globals.css'
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: '엔게이지 아카데미 - 최고의 교육 프로그램',
-  description: '미래를 선도하는 교육, 엔게이지 아카데미와 함께하세요.',
+  title: '엔게이지 아카데미 - 미래를 선도하는 IT 교육의 중심',
+  description: '체계적인 커리큘럼과 실무 중심의 교육으로 IT 인재를 양성하는 엔게이지 아카데미입니다.',
   keywords: '학원, 교육, 프로그래밍, 코딩',
 }
 
@@ -16,8 +16,10 @@ export default function RootLayout({
     <html lang="ko">
       <head>
         <link
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
           rel="stylesheet"
+          as="style"
+          crossOrigin="anonymous"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap"
