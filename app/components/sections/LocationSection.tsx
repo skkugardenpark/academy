@@ -3,9 +3,19 @@ import { motion } from 'framer-motion'
 import SectionTitle from '../common/SectionTitle'
 import AnimatedSection from '../common/AnimatedSection'
 
+interface KakaoMaps {
+  maps: {
+    load: (callback: () => void) => void;
+    Map: new (container: HTMLElement, options: any) => any;
+    LatLng: new (lat: number, lng: number) => any;
+    Marker: new (options: { position: any }) => any;
+    CustomOverlay: new (options: { position: any; content: string; yAnchor: number }) => any;
+  }
+}
+
 declare global {
   interface Window {
-    kakao: any
+    kakao: KakaoMaps
   }
 }
 

@@ -1,4 +1,3 @@
-import { ButtonHTMLAttributes } from 'react'
 import { motion, HTMLMotionProps } from 'framer-motion'
 
 interface ButtonProps extends Omit<HTMLMotionProps<"button">, "className" | "children"> {

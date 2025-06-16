@@ -2,6 +2,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
+interface IconProps {
+  className?: string;
+  'aria-hidden'?: boolean;
+}
+
 const navigation = {
   main: [
     { name: '홈', href: '#' },
@@ -16,7 +21,7 @@ const navigation = {
     {
       name: 'Instagram',
       href: '#',
-      icon: (props: any) => (
+      icon: (props: IconProps) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -29,7 +34,7 @@ const navigation = {
     {
       name: 'YouTube',
       href: '#',
-      icon: (props: any) => (
+      icon: (props: IconProps) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -42,7 +47,7 @@ const navigation = {
     {
       name: 'Kakao',
       href: '#',
-      icon: (props: any) => (
+      icon: (props: IconProps) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"

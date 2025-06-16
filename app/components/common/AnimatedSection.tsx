@@ -1,4 +1,4 @@
-import { motion, HTMLMotionProps } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ReactNode } from 'react'
 
 interface AnimatedSectionProps {
@@ -9,11 +9,21 @@ interface AnimatedSectionProps {
   withGlass?: boolean
 }
 
-type AnimationConfig = {
-  initial: any
-  whileInView: any
-  animate?: any
-  transition: any
+interface AnimationConfig {
+  initial: Record<string, number>
+  whileInView: Record<string, number>
+  animate?: Record<string, number[]>
+  transition: {
+    duration: number
+    type?: string
+    stiffness?: number
+    y?: {
+      duration: number
+      repeat: number
+      repeatType: string
+      ease: string
+    }
+  }
 }
 
 const animations: Record<string, AnimationConfig> = {

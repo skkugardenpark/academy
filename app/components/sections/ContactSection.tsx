@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
-import { ContactForm } from '../../types'
 import SectionTitle from '../common/SectionTitle'
 import AnimatedSection from '../common/AnimatedSection'
 import Button from '../common/Button'
