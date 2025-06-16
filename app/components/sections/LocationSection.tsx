@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import SectionTitle from '../common/SectionTitle'
 import AnimatedSection from '../common/AnimatedSection'
+import Script from 'next/script'
 
 interface KakaoLatLng {
   getLat(): number;
@@ -18,11 +19,17 @@ interface KakaoMap {
 interface KakaoMarker {
   setMap(map: KakaoMap | null): void;
   getMap(): KakaoMap | null;
+  getPosition(): KakaoLatLng;
 }
 
 interface KakaoCustomOverlay {
   setMap(map: KakaoMap | null): void;
   getMap(): KakaoMap | null;
+}
+
+interface KakaoInfoWindow {
+  open(map: KakaoMap, marker: KakaoMarker): void;
+  close(): void;
 }
 
 interface KakaoMaps {
@@ -32,6 +39,7 @@ interface KakaoMaps {
     LatLng: new (lat: number, lng: number) => KakaoLatLng;
     Marker: new (options: { position: KakaoLatLng }) => KakaoMarker;
     CustomOverlay: new (options: { position: KakaoLatLng; content: string; yAnchor: number }) => KakaoCustomOverlay;
+    InfoWindow: new (options: { content: string }) => KakaoInfoWindow;
   }
 }
 
@@ -78,18 +86,12 @@ export default function LocationSection() {
         })
         marker.setMap(map)
 
-        // 커스텀 오버레이 생성
-        const content = `
-          <div class="bg-white px-4 py-2 rounded-lg shadow-lg">
-            <p class="font-semibold text-primary">엔게이지 아카데미</p>
-          </div>
-        `
-        const customOverlay = new window.kakao.maps.CustomOverlay({
-          position: markerPosition,
-          content: content,
-          yAnchor: 2.5
+        // 인포윈도우 추가
+        const iwContent = '<div style="padding:5px;">엔게이지 아카데미</div>'
+        const infowindow = new window.kakao.maps.InfoWindow({
+          content: iwContent
         })
-        customOverlay.setMap(map)
+        infowindow.open(map, marker)
       })
     }
 
