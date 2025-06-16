@@ -127,16 +127,16 @@ input, textarea, select {
 }
 
 /* 애니메이션 클래스 */
-.animate-fade-in {
-  @apply animate-fade-in;
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-.animate-slide-up {
-  @apply animate-slide-up;
+.slide-up {
+  animation: slideUp 0.5s ease-in-out;
 }
 
-.animate-float {
-  @apply animate-float;
+.float {
+  animation: float 6s ease-in-out infinite;
 }
 
 /* 반응형 타이포그래피 */
