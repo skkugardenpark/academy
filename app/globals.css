@@ -6,7 +6,6 @@
   --primary: #2196F3;
   --mint: #4CE0B3;
   --gold: #FFE082;
-  --light-bg: #F8FAFC;
   --accent-purple: #9C27B0;
 }
 
@@ -18,7 +17,7 @@ body {
   font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  @apply bg-gradient-to-b from-light-bg via-white to-light-bg;
+  @apply bg-gradient-to-b from-slate-50 via-white to-slate-50;
 }
 
 /* Glass Effect */
