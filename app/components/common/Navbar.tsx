@@ -29,23 +29,22 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault()
-    const targetId = href.substring(1) // '#testimonials' -> 'testimonials'
-    const element = document.getElementById(targetId)
-    
-    if (element) {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId.replace('#', ''))
+    if (section) {
       const navbarHeight = 80
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY
-      const offsetPosition = elementPosition - navbarHeight
-
+      const sectionTop = section.offsetTop - navbarHeight
       window.scrollTo({
-        top: offsetPosition,
+        top: sectionTop,
         behavior: 'smooth'
       })
-      
-      setIsOpen(false)
     }
+  }
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    scrollToSection(href)
+    setIsOpen(false)
   }
 
   return (

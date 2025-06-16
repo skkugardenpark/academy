@@ -5,11 +5,13 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 
 function Particles() {
-  const points = useRef()
+  const points = useRef<THREE.Points>(null)
   
   useFrame((state) => {
-    points.current.rotation.y += 0.001
-    points.current.rotation.x += 0.001
+    if (points.current) {
+      points.current.rotation.y += 0.001
+      points.current.rotation.x += 0.001
+    }
   })
 
   const particlesCount = 5000
@@ -29,6 +31,7 @@ function Particles() {
           count={particlesCount}
           itemSize={3}
           array={positions}
+          args={[positions, 3]}
         />
       </bufferGeometry>
       <pointsMaterial
