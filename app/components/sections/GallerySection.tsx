@@ -4,42 +4,42 @@ import { motion, AnimatePresence } from 'framer-motion'
 import SectionTitle from '../common/SectionTitle'
 import AnimatedSection from '../common/AnimatedSection'
 
-const images = [
+const galleryImages = [
   {
-    src: '/images/gallery/class-1.jpg',
-    alt: '수업 진행 모습',
-    title: '실전 회화 수업',
-    description: '원어민 강사와 함께하는 interactive한 수업'
+    id: 1,
+    src: '/images/gallery/classroom-1.jpg',
+    alt: '현대적인 강의실',
+    description: '최신 시설을 갖춘 쾌적한 강의실'
   },
   {
-    src: '/images/gallery/class-2.jpg',
+    id: 2,
+    src: '/images/gallery/study-group.jpg',
     alt: '그룹 스터디',
-    title: '그룹 스터디',
-    description: '학생들과 함께하는 협동 학습'
+    description: '활발한 토론과 그룹 학습'
   },
   {
+    id: 3,
     src: '/images/gallery/presentation.jpg',
-    alt: '프레젠테이션',
-    title: '프레젠테이션 실습',
-    description: '영어로 진행하는 비즈니스 프레젠테이션'
+    alt: '학생 프레젠테이션',
+    description: '자신감 있는 발표 실습'
   },
   {
-    src: '/images/gallery/event-1.jpg',
-    alt: '문화 교류 행사',
-    title: '문화 교류 행사',
-    description: '다양한 문화를 체험하는 특별 프로그램'
+    id: 4,
+    src: '/images/gallery/library.jpg',
+    alt: '학습 자료실',
+    description: '다양한 학습 자료 구비'
   },
   {
-    src: '/images/gallery/facility-1.jpg',
-    alt: '학습 시설',
-    title: '최신식 학습 시설',
-    description: '쾌적한 환경에서 진행되는 수업'
+    id: 5,
+    src: '/images/gallery/counseling.jpg',
+    alt: '1:1 상담',
+    description: '맞춤형 학습 상담'
   },
   {
-    src: '/images/gallery/event-2.jpg',
-    alt: '졸업식',
-    title: '수료식',
-    description: '새로운 시작을 축하하는 수료식'
+    id: 6,
+    src: '/images/gallery/activity.jpg',
+    alt: '특별 활동',
+    description: '즐거운 문화 체험 활동'
   }
 ]
 
@@ -75,81 +75,65 @@ export default function GallerySection() {
           subtitle="엔게이지 아카데미의 다양한 모습을 소개합니다"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className="group cursor-pointer"
-              onClick={() => setSelectedImage(index)}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          {galleryImages.map((image) => (
+            <motion.div
+              key={image.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: image.id * 0.1 }}
+              className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
+              onClick={() => setSelectedImage(image.id)}
             >
-              <AnimatedSection
-                animation="scale"
-                delay={index * 0.1}
-              >
-                <div className="glass-effect rounded-2xl overflow-hidden hover-card">
-                  <div className="relative h-64">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      fill
-                      className="object-cover transition-all duration-300 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <h3 className="text-xl font-bold mb-2">{image.title}</h3>
-                      <p className="text-white/80">{image.description}</p>
-                    </div>
+              <div className="relative h-64 w-full">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="text-center text-white p-4">
+                    <h3 className="text-lg font-semibold mb-2">{image.alt}</h3>
+                    <p className="text-sm">{image.description}</p>
                   </div>
                 </div>
-              </AnimatedSection>
-            </div>
+              </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
       {/* Modal */}
-      <AnimatePresence>
-        {selectedImage !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
-            onClick={() => setSelectedImage(null)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="relative max-w-5xl w-full aspect-video bg-white rounded-2xl overflow-hidden"
-              onClick={e => e.stopPropagation()}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative w-full max-w-4xl">
+            <button
+              className="absolute -top-10 right-0 text-white hover:text-mint"
+              onClick={() => setSelectedImage(null)}
             >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <div className="relative h-[80vh]">
               <Image
-                src={images[selectedImage].src}
-                alt={images[selectedImage].alt}
+                src={galleryImages.find(img => img.id === selectedImage)?.src || ''}
+                alt={galleryImages.find(img => img.id === selectedImage)?.alt || ''}
                 fill
                 className="object-contain"
+                sizes="100vw"
               />
-              <button
-                className="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-                onClick={() => setSelectedImage(null)}
-              >
-                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
-                <h3 className="text-2xl font-bold text-white mb-2">
-                  {images[selectedImage].title}
-                </h3>
-                <p className="text-white/80">
-                  {images[selectedImage].description}
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 } 
