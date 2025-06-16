@@ -59,6 +59,18 @@ const courses: Course[] = [
   }
 ]
 
+const floatingAnimation = {
+  animate: {
+    scale: [1, 1.2, 1],
+    opacity: [0.2, 0.4, 0.2],
+  },
+  transition: {
+    duration: 8,
+    repeat: Infinity,
+    repeatType: "reverse" as const,
+  }
+}
+
 export default function CurriculumSection() {
   return (
     <section id="curriculum" className="py-20 relative overflow-hidden">
@@ -66,15 +78,8 @@ export default function CurriculumSection() {
       <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] opacity-5" />
       <motion.div
         className="absolute top-40 -left-20 w-80 h-80 bg-mint/30 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.2, 0.4, 0.2],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
+        animate={floatingAnimation.animate}
+        transition={floatingAnimation.transition}
       />
 
       <div className="container mx-auto px-4 relative">

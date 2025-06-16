@@ -1,6 +1,27 @@
-import { motion } from 'framer-motion'
+import { motion, Transition } from 'framer-motion'
 import Button from '../common/Button'
 import AnimatedSection from '../common/AnimatedSection'
+
+const floatingAnimation = {
+  animate: {
+    scale: [1, 1.2, 1],
+    opacity: [0.3, 0.5, 0.3],
+  },
+  transition: {
+    duration: 8,
+    repeat: Infinity,
+    repeatType: "reverse" as const,
+  }
+}
+
+const scrollIndicatorAnimation = {
+  animate: { y: [0, 10, 0] },
+  transition: {
+    duration: 1.5,
+    repeat: Infinity,
+    repeatType: "reverse" as const,
+  }
+}
 
 export default function HeroSection() {
   return (
@@ -12,26 +33,15 @@ export default function HeroSection() {
       {/* Floating Elements */}
       <motion.div
         className="absolute -top-20 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
+        animate={floatingAnimation.animate}
+        transition={floatingAnimation.transition}
       />
       <motion.div
         className="absolute -bottom-32 -left-32 w-96 h-96 bg-mint/20 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.2, 0.4, 0.2],
-        }}
+        animate={floatingAnimation.animate}
         transition={{
-          duration: 10,
-          repeat: Infinity,
-          repeatType: "reverse",
+          ...floatingAnimation.transition,
+          duration: 10
         }}
       />
 
@@ -82,12 +92,8 @@ export default function HeroSection() {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
+          animate={scrollIndicatorAnimation.animate}
+          transition={scrollIndicatorAnimation.transition}
           className="text-primary/50"
         >
           <svg

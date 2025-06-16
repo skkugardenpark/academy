@@ -42,6 +42,18 @@ const features = [
   }
 ]
 
+const floatingAnimation = {
+  animate: {
+    scale: [1, 1.2, 1],
+    opacity: [0.3, 0.5, 0.3],
+  },
+  transition: {
+    duration: 8,
+    repeat: Infinity,
+    repeatType: "reverse" as const,
+  }
+}
+
 export default function AboutSection() {
   return (
     <section id="about" className="py-20 bg-gradient-to-b from-white to-mint/20 relative overflow-hidden">
@@ -49,15 +61,8 @@ export default function AboutSection() {
       <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-mint/10 to-transparent" />
       <motion.div
         className="absolute top-40 -right-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
+        animate={floatingAnimation.animate}
+        transition={floatingAnimation.transition}
       />
 
       <div className="container mx-auto px-4">

@@ -41,6 +41,18 @@ declare global {
   }
 }
 
+const floatingAnimation = {
+  animate: {
+    scale: [1, 1.2, 1],
+    opacity: [0.3, 0.5, 0.3],
+  },
+  transition: {
+    duration: 8,
+    repeat: Infinity,
+    repeatType: "reverse" as const,
+  }
+}
+
 export default function LocationSection() {
   useEffect(() => {
     const mapScript = document.createElement('script')
@@ -93,15 +105,8 @@ export default function LocationSection() {
       <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] opacity-5" />
       <motion.div
         className="absolute top-40 -right-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
+        animate={floatingAnimation.animate}
+        transition={floatingAnimation.transition}
       />
 
       <div className="container mx-auto px-4 relative">

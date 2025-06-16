@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, Transition, Variants } from 'framer-motion'
 import { ReactNode } from 'react'
 
 interface AnimatedSectionProps {
@@ -13,17 +13,7 @@ interface AnimationConfig {
   initial: Record<string, number>
   whileInView: Record<string, number>
   animate?: Record<string, number[]>
-  transition: {
-    duration: number
-    type?: string
-    stiffness?: number
-    y?: {
-      duration: number
-      repeat: number
-      repeatType: string
-      ease: string
-    }
-  }
+  transition: Transition
 }
 
 const animations: Record<string, AnimationConfig> = {
@@ -61,8 +51,8 @@ const animations: Record<string, AnimationConfig> = {
       y: {
         duration: 3,
         repeat: Infinity,
-        repeatType: 'reverse',
-        ease: 'easeInOut'
+        repeatType: "reverse",
+        ease: "easeInOut"
       }
     }
   }
