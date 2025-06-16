@@ -3,6 +3,7 @@ import SectionTitle from '../common/SectionTitle'
 import AnimatedSection from '../common/AnimatedSection'
 import Button from '../common/Button'
 import { ReactNode } from 'react'
+import Image from 'next/image'
 
 interface Course {
   id: number
@@ -98,74 +99,40 @@ const floatingAnimation = {
 
 export default function CurriculumSection() {
   return (
-    <section id="curriculum" className="py-20 relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] opacity-5" />
-      <motion.div
-        className="absolute top-40 -left-20 w-80 h-80 bg-mint/30 rounded-full blur-3xl"
-        animate={floatingAnimation.animate}
-        transition={floatingAnimation.transition}
-      />
+    <section id="curriculum" className="section-padding bg-gradient-to-b from-orange-50/30 via-white to-rose-50/50">
+      <div className="container">
+        <div className="text-center mb-16">
+          <h2 className="gradient-text mb-6">커리큘럼 소개</h2>
+          <p className="text-slate-600 max-w-2xl mx-auto">
+            체계적이고 효과적인 학습을 위한 다양한 프로그램을 제공합니다
+          </p>
+        </div>
 
-      <div className="container mx-auto px-4 relative">
-        <SectionTitle
-          title="수준별 맞춤 커리큘럼"
-          subtitle="학습자의 수준과 목표에 맞는 최적화된 교육과정을 제공합니다"
-        />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {courses.map((course) => (
-            <motion.div
-              key={course.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: course.id * 0.1 }}
-              className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300"
-            >
-              <div className="text-primary mb-4">{course.icon}</div>
-              <h3 className="text-xl font-bold text-primary mb-3">{course.title}</h3>
-              <p className="text-gray-600 mb-4">{course.description}</p>
-              <ul className="space-y-2 mb-4">
-                {course.features.map((feature) => (
-                  <li key={feature} className="flex items-center text-gray-600">
-                    <svg
-                      className="w-4 h-4 text-primary mr-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <div className="text-sm text-gray-500">레벨: {course.level}</div>
-            </motion.div>
+            <div key={course.id} className="modern-card group">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white">
+                  {course.icon}
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold text-slate-800 mb-2 group-hover:text-primary transition-colors">
+                    {course.title}
+                  </h3>
+                  <p className="text-slate-600">
+                    {course.description}
+                  </p>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 
-        {/* 추가 정보 */}
-        <AnimatedSection animation="fade" className="mt-16 text-center">
-          <p className="text-gray-600 mb-8">
-            모든 과정은 수강생의 수준과 목표에 따라 맞춤 조정이 가능합니다.
-            <br />
-            자세한 내용은 무료 상담을 통해 안내해 드립니다.
-          </p>
-          <Button
-            variant="outline"
-            size="lg"
-            onClick={() => document.getElementById('contact')?.scrollIntoView()}
-          >
-            무료 상담 신청
-          </Button>
-        </AnimatedSection>
+        <div className="mt-16 text-center">
+          <button className="btn-primary">
+            상세 커리큘럼 다운로드
+          </button>
+        </div>
       </div>
     </section>
   )
