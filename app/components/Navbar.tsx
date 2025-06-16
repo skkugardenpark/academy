@@ -27,10 +27,8 @@ export default function Navbar() {
 
   return (
     <nav 
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white shadow-sm' 
-          : 'bg-transparent'
+      className={`fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-sm ${
+        isScrolled ? 'shadow-sm' : ''
       }`}
     >
       <div className="container mx-auto px-4">
@@ -54,28 +52,19 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`transition-colors ${
-                  isScrolled 
-                    ? 'text-slate-600 hover:text-primary' 
-                    : 'text-white hover:text-white/80'
-                }`}
+                className="text-slate-600 hover:text-primary transition-colors"
               >
                 {item.label}
               </Link>
             ))}
-            <button className={`${
-              isScrolled 
-                ? 'btn-primary' 
-                : 'bg-white/10 hover:bg-white/20 text-white border-white/20'
-              } px-6 py-2 rounded-full font-semibold transition-all duration-300`}
-            >
+            <button className="btn-primary px-6 py-2 rounded-full font-semibold transition-all duration-300">
               무료 레벨 테스트
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className={`md:hidden ${isScrolled ? 'text-slate-600' : 'text-white'}`}
+            className="md:hidden text-slate-600"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <svg
