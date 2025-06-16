@@ -1,49 +1,46 @@
-import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { Instructor } from '../../types'
+import Image from 'next/image'
 import SectionTitle from '../common/SectionTitle'
-import AnimatedSection from '../common/AnimatedSection'
 
-const instructors: Instructor[] = [
+const teachers = [
   {
-    id: 1,
-    name: 'Sarah Johnson',
-    role: 'Head Instructor',
-    image: '/images/instructors/sarah.jpg',
-    education: 'M.A. in TESOL, Oxford University',
-    experience: '15+ years experience',
-    description: '영국 Oxford 출신의 베테랑 강사로, 체계적인 커리큘럼 개발과 학생 맞춤형 교육을 전문으로 합니다.',
-    expertise: ['Business English', 'IELTS Preparation', 'Academic Writing']
-  },
-  {
-    id: 2,
-    name: 'Michael Brown',
-    role: 'Senior Instructor',
-    image: '/images/instructors/michael.jpg',
-    education: 'B.A. in English Literature, UCLA',
-    experience: '10+ years experience',
-    description: '미국 UCLA 출신으로 다년간의 회화 수업 경력을 보유하고 있으며, 학생들과의 상호작용을 중시합니다.',
-    expertise: ['Conversation', 'Pronunciation', 'Public Speaking']
-  },
-  {
-    id: 3,
     name: 'Emma Wilson',
-    role: 'Communication Specialist',
-    image: '/images/instructors/emma.jpg',
-    education: 'M.Ed. in Education, Cambridge',
-    experience: '8+ years experience',
-    description: '영국 Cambridge 출신의 커뮤니케이션 전문가로, 실용적인 비즈니스 영어 교육을 담당합니다.',
-    expertise: ['Business Communication', 'Presentation Skills', 'Interview Prep']
+    role: '원어민 영어 강사',
+    description: '10년 이상의 교육 경력을 가진 전문가로, 학생들의 실력 향상을 위한 맞춤형 교육을 제공합니다.',
+    image: '/images/teachers/emma.jpg',
+    subjects: ['회화', '비즈니스 영어', 'TOEIC Speaking']
+  },
+  {
+    name: 'John Smith',
+    role: '회화 전문 강사',
+    description: '영국 케임브리지 대학 졸업, TESOL 자격증 보유. 자연스러운 영어 회화를 가르칩니다.',
+    image: '/images/teachers/john.jpg',
+    subjects: ['일상 회화', '발음 교정', '프레젠테이션']
+  },
+  {
+    name: 'Sarah Johnson',
+    role: '시험 대비 전문 강사',
+    description: '미국 컬럼비아 대학원 TESOL 석사. TOEIC, IELTS 등 각종 시험 대비를 전문적으로 지도합니다.',
+    image: '/images/teachers/sarah.jpg',
+    subjects: ['TOEIC', 'IELTS', '문법']
+  },
+  {
+    name: 'Michael Brown',
+    role: '비즈니스 영어 전문',
+    description: '글로벌 기업 실무 경험을 바탕으로 실용적인 비즈니스 영어를 가르칩니다.',
+    image: '/images/teachers/michael.jpg',
+    subjects: ['비즈니스 영어', '이메일 작성', '협상 스킬']
   }
 ]
 
 export default function InstructorsSection() {
   return (
-    <section id="instructors" className="py-20 bg-gradient-to-b from-white to-mint/20 relative overflow-hidden">
+    <section id="instructors" className="py-20 relative overflow-hidden">
       {/* Decorative Elements */}
+      <div className="absolute inset-0 bg-gradient-to-b from-mint/5 to-white/5" />
       <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] opacity-5" />
       <motion.div
-        className="absolute top-40 -right-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl"
+        className="absolute top-40 -left-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -57,68 +54,51 @@ export default function InstructorsSection() {
 
       <div className="container mx-auto px-4 relative">
         <SectionTitle
-          title="전문 원어민 강사진"
-          subtitle="수준 높은 교육을 제공하는 검증된 전문가들을 소개합니다"
+          title="전문 강사진 소개"
+          subtitle="글로벌 수준의 교육을 제공하는 전문가들을 만나보세요"
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {instructors.map((instructor, index) => (
-            <AnimatedSection
-              key={instructor.id}
-              animation="scale"
-              delay={index * 0.2}
-              className="group"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+          {teachers.map((teacher, index) => (
+            <motion.div
+              key={teacher.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-shadow duration-300"
             >
-              <div className="glass-effect rounded-2xl overflow-hidden hover-card">
-                <div className="relative h-72">
-                  <Image
-                    src={instructor.image}
-                    alt={instructor.name}
-                    fill
-                    className="object-cover transition-all duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative h-64 w-full">
+                <Image
+                  src={teacher.image}
+                  alt={teacher.name}
+                  fill
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <h3 className="text-xl font-semibold">{teacher.name}</h3>
+                  <p className="text-mint">{teacher.role}</p>
                 </div>
-
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold text-primary mb-1">
-                    {instructor.name}
-                  </h3>
-                  <p className="text-gold font-medium mb-3">
-                    {instructor.role}
-                  </p>
-                  
-                  <div className="flex items-center text-sm text-primary/70 mb-4">
-                    <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </svg>
-                    {instructor.education}
-                  </div>
-
-                  <div className="flex items-center text-sm text-primary/70 mb-4">
-                    <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    {instructor.experience}
-                  </div>
-
-                  <p className="text-gray-600 mb-6">
-                    {instructor.description}
-                  </p>
-
+              </div>
+              <div className="p-6">
+                <p className="text-gray-600 mb-4">{teacher.description}</p>
+                <div className="space-y-2">
+                  <h4 className="font-semibold text-gray-900">전문 분야:</h4>
                   <div className="flex flex-wrap gap-2">
-                    {instructor.expertise.map((skill) => (
+                    {teacher.subjects.map((subject) => (
                       <span
-                        key={skill}
-                        className="px-3 py-1 bg-primary/5 text-primary/70 rounded-full text-sm"
+                        key={subject}
+                        className="bg-mint/10 text-mint px-3 py-1 rounded-full text-sm"
                       >
-                        {skill}
+                        {subject}
                       </span>
                     ))}
                   </div>
                 </div>
               </div>
-            </AnimatedSection>
+            </motion.div>
           ))}
         </div>
       </div>
