@@ -40,6 +40,7 @@ const config: Config = {
           pink: '#FF6B6B',
           green: '#4CAF50'
         },
+        navy: '#1E3A8A',
       },
       fontFamily: {
         sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],

@@ -2,15 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary: #FF6B6B;
-  --secondary: #FFA07A;
-  --accent: #FFB6C1;
-  --background: #FFF5F5;
-  --navy: #1E3A8A;
-  --text: #2D3748;
-}
-
 @layer base {
   body {
     @apply bg-white text-slate-900;
