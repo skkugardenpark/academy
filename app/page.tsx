@@ -15,8 +15,8 @@ import ScrollAnimation from './components/effects/ScrollAnimation'
 
 export default function Home() {
   return (
-    <main className="relative bg-gradient-to-b from-dark via-dark-light to-dark min-h-screen">
-      <div className="absolute inset-0 bg-grid opacity-5" />
+    <main className="relative min-h-screen">
+      <div className="absolute inset-0 bg-grid-light opacity-10" />
       <Navbar />
       <ScrollAnimation>
         <HeroSection />
