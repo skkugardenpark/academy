@@ -1,61 +1,86 @@
 import { motion } from 'framer-motion'
-import { Course } from '../../types'
 import SectionTitle from '../common/SectionTitle'
 import AnimatedSection from '../common/AnimatedSection'
 import Button from '../common/Button'
+import { ReactNode } from 'react'
+
+interface Course {
+  id: number
+  title: string
+  description: string
+  icon: ReactNode
+  features: string[]
+  level: string
+}
 
 const courses: Course[] = [
   {
     id: 1,
-    level: '초등부',
-    title: '코딩 기초 과정',
-    description: '논리적 사고와 문제 해결 능력을 키우는 기초 프로그래밍 교육',
+    title: '초급 회화 과정',
+    description: '기초부터 시작하는 실용 영어 회화',
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+      </svg>
+    ),
     features: [
-      'Scratch를 활용한 코딩 기초',
-      '파이썬 프로그래밍 입문',
-      '알고리즘 기초',
-      '주 2회 / 3개월 과정'
+      '기초 문법과 발음',
+      '일상 생활 회화',
+      '기본 어휘 학습',
+      '1:1 발음 교정'
     ],
-    icon: '🎮'
+    level: '초급 (1-3개월)'
   },
   {
     id: 2,
-    level: '중등부',
-    title: '웹 개발 기초',
-    description: '웹 개발의 기초를 배우고 나만의 웹사이트를 만드는 과정',
+    title: '중급 회화 과정',
+    description: '자신감 있는 영어 표현력 향상',
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+      </svg>
+    ),
     features: [
-      'HTML/CSS 기초',
-      'JavaScript 프로그래밍',
-      '반응형 웹 디자인',
-      '주 3회 / 4개월 과정'
+      '심화 문법',
+      '비즈니스 회화',
+      '프레젠테이션 스킬',
+      '토론 및 디베이트'
     ],
-    icon: '💻'
+    level: '중급 (3-6개월)'
   },
   {
     id: 3,
-    level: '고등부',
-    title: '실무 개발자 과정',
-    description: '취업을 위한 실무 중심의 프로그래밍 심화 과정',
+    title: '고급 회화 과정',
+    description: '원어민 수준의 유창성 달성',
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      </svg>
+    ),
     features: [
-      'React/Next.js 웹 개발',
-      'Node.js 백엔드 개발',
-      '프로젝트 포트폴리오',
-      '주 5회 / 6개월 과정'
+      '고급 비즈니스 영어',
+      '학술 영어',
+      '문화적 이해',
+      '국제 시험 대비'
     ],
-    icon: '🚀'
+    level: '고급 (6개월+)'
   },
   {
     id: 4,
-    level: '성인부',
-    title: '직장인 실무 과정',
-    description: '현업 개발자를 위한 최신 기술 스택 교육',
+    title: '시험 대비 과정',
+    description: '토익/토플/아이엘츠 완벽 대비',
+    icon: (
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
     features: [
-      'DevOps/클라우드',
-      'AI/머신러닝',
-      '블록체인/Web3',
-      '주말반 / 3개월 과정'
+      '실전 모의고사',
+      '문제 풀이 전략',
+      '시험별 맞춤 학습',
+      '취약점 분석'
     ],
-    icon: '💼'
+    level: '전 레벨'
   }
 ]
 
@@ -88,60 +113,41 @@ export default function CurriculumSection() {
           subtitle="학습자의 수준과 목표에 맞는 최적화된 교육과정을 제공합니다"
         />
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {courses.map((course, index) => (
-            <AnimatedSection
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+          {courses.map((course) => (
+            <motion.div
               key={course.id}
-              animation="scale"
-              delay={index * 0.2}
-              className="relative group"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: course.id * 0.1 }}
+              className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-all duration-300"
             >
-              <div className={`
-                relative overflow-hidden rounded-2xl
-                bg-gradient-to-br from-mint to-mint/50
-                p-8 h-full
-                transition-all duration-300
-                hover:shadow-xl hover:scale-[1.02]
-                glass-effect
-              `}>
-                <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl transform translate-x-16 -translate-y-16" />
-                
-                <div className="relative">
-                  <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center text-primary mb-6">
-                    {course.icon}
-                  </div>
-
-                  <div className="text-sm font-semibold text-primary/70 mb-2">
-                    {course.level}
-                  </div>
-
-                  <h3 className="text-2xl font-bold text-primary mb-4">
-                    {course.title}
-                  </h3>
-
-                  <p className="text-primary/80 mb-6">
-                    {course.description}
-                  </p>
-
-                  <ul className="space-y-3">
-                    {course.features.map((feature, i) => (
-                      <motion.li
-                        key={i}
-                        initial={{ opacity: 0, x: -20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.1 * i }}
-                        className="flex items-center text-primary/70"
-                      >
-                        <svg className="w-5 h-5 mr-3 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        {feature}
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </AnimatedSection>
+              <div className="text-primary mb-4">{course.icon}</div>
+              <h3 className="text-xl font-bold text-primary mb-3">{course.title}</h3>
+              <p className="text-gray-600 mb-4">{course.description}</p>
+              <ul className="space-y-2 mb-4">
+                {course.features.map((feature) => (
+                  <li key={feature} className="flex items-center text-gray-600">
+                    <svg
+                      className="w-4 h-4 text-primary mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <div className="text-sm text-gray-500">레벨: {course.level}</div>
+            </motion.div>
           ))}
         </div>
 
