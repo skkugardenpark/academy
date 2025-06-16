@@ -13,40 +13,83 @@ html {
 }
 
 body {
-  font-family: 'Pretendard', 'Outfit', 'DM Sans', sans-serif;
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #ffffff 0%, var(--mint) 100%);
-  background-attachment: fixed;
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 
 /* Glass Effect */
 .glass-effect {
-  @apply backdrop-blur-[8px] border border-white/20 shadow-glass;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+  @apply backdrop-blur-glass border border-white/20 shadow-glass bg-gradient-glass;
+  backdrop-filter: blur(8px);
 }
 
-/* Hover Effects */
-.hover-card {
-  @apply transition-all duration-300 hover:shadow-gold hover:scale-105;
+/* Modern Card Effect */
+.modern-card {
+  @apply bg-white rounded-2xl p-6 shadow-lg transition-all duration-300
+         hover:shadow-xl hover:scale-[1.02] hover:shadow-primary/5
+         dark:bg-gray-800/50 dark:hover:bg-gray-800/60;
+}
+
+/* Gradient Text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent-blue to-accent-purple
+         animate-gradient bg-[length:200%_auto];
+}
+
+/* Shimmer Effect */
+.shimmer {
+  @apply relative overflow-hidden;
+}
+
+.shimmer::after {
+  @apply absolute inset-0 transform translate-x-[-100%] bg-shimmer animate-shimmer;
+  content: '';
 }
 
 /* Button Styles */
 .btn-primary {
-  @apply bg-primary text-white hover:bg-white hover:text-primary border-2 border-transparent hover:border-primary transition-all duration-300 shadow-lg hover:shadow-gold;
+  @apply bg-primary text-white rounded-lg px-6 py-3
+         hover:bg-primary-light transition-all duration-300
+         shadow-lg hover:shadow-glow
+         active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
 }
 
 .btn-secondary {
-  @apply bg-mint text-primary hover:bg-primary hover:text-white transition-all duration-300 shadow-md hover:shadow-lg;
+  @apply bg-mint text-primary rounded-lg px-6 py-3
+         hover:bg-mint-dark transition-all duration-300
+         shadow-md hover:shadow-lg
+         active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
 }
 
 .btn-outline {
-  @apply bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300;
+  @apply bg-transparent border-2 border-primary text-primary rounded-lg px-6 py-3
+         hover:bg-primary hover:text-white transition-all duration-300
+         active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+/* Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display font-bold tracking-tight;
+}
+
+h1 {
+  @apply text-4xl md:text-5xl lg:text-6xl;
+}
+
+h2 {
+  @apply text-3xl md:text-4xl lg:text-5xl;
+}
+
+h3 {
+  @apply text-2xl md:text-3xl lg:text-4xl;
 }
 
 /* Section Styles */
 .section-padding {
-  @apply py-16 md:py-24;
+  @apply py-16 md:py-24 lg:py-32;
 }
 
 /* Grid Layouts */
@@ -56,160 +99,61 @@ body {
 
 /* 스크롤바 스타일링 */
 ::-webkit-scrollbar {
-  width: 8px;
+  @apply w-2;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
+  @apply bg-gray-100 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--gold);
+  @apply bg-primary/50 rounded-full hover:bg-primary/70 transition-colors;
 }
 
 /* Selection Style */
 ::selection {
-  background: var(--gold);
-  color: white;
+  @apply bg-gold/30 text-primary;
 }
 
-/* 폼 요소 포커스 스타일링 */
-input:focus,
-textarea:focus,
-select:focus {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-}
-
-/* 버튼 트랜지션 */
-button {
-  transition: all 0.3s ease-in-out;
-}
-
-/* 링크 트랜지션 */
-a {
-  transition: all 0.3s ease-in-out;
-}
-
-/* 섹션 패딩 */
-section {
-  padding: 5rem 0;
+/* 폼 요소 스타일링 */
+input, textarea, select {
+  @apply rounded-lg border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20
+         transition-all duration-300;
 }
 
 /* 컨테이너 */
 .container {
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 0 1rem;
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-@media (min-width: 640px) {
-  .container {
-    padding: 0 2rem;
-  }
+/* 애니메이션 클래스 */
+.animate-fade-in {
+  @apply animate-fade-in;
 }
 
-@media (min-width: 1024px) {
-  .container {
-    padding: 0 4rem;
-  }
+.animate-slide-up {
+  @apply animate-slide-up;
 }
 
-/* 애니메이션 */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.animate-float {
+  @apply animate-float;
 }
 
-@keyframes slideUp {
-  from {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.animate-slideUp {
-  animation: slideUp 0.5s ease-in-out;
-}
-
-/* 타이포그래피 */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-
-h5 {
-  font-size: 1.25rem;
-}
-
-h6 {
-  font-size: 1rem;
-}
-
+/* 반응형 타이포그래피 */
 @media (min-width: 768px) {
-  h1 {
-    font-size: 3.5rem;
-  }
-
-  h2 {
-    font-size: 3rem;
-  }
-
-  h3 {
-    font-size: 2.5rem;
-  }
-
-  h4 {
-    font-size: 2rem;
-  }
-
-  h5 {
-    font-size: 1.5rem;
-  }
-
-  h6 {
-    font-size: 1.25rem;
+  body {
+    @apply text-lg;
   }
 }
 
-.swiper-pagination-bullet {
-  background: var(--primary) !important;
-}
-
-.swiper-pagination-bullet-active {
-  background: var(--primary) !important;
+/* 다크모드 지원 */
+@media (prefers-color-scheme: dark) {
+  body {
+    @apply bg-gray-900 text-white;
+  }
+  
+  .glass-effect {
+    @apply border-white/10 bg-white/5;
+  }
+} 
 } 
