@@ -1,14 +1,11 @@
 import './globals.css'
-import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Navbar from './components/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: '엔게이지 아카데미 - 미래를 선도하는 IT 교육의 중심',
-  description: '체계적인 커리큘럼과 실무 중심의 교육으로 IT 인재를 양성하는 엔게이지 아카데미입니다.',
-  keywords: '학원, 교육, 프로그래밍, 코딩',
+export const metadata = {
+  title: 'Engage Academy',
+  description: '체계적인 커리큘럼과 전문 강사진이 함께하는 대한민국 대표 초등영어 전문 교육기관',
 }
 
 export default function RootLayout({
@@ -31,7 +28,6 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased bg-gradient-to-br from-slate-50 to-mint/30">
-        <Navbar />
         {children}
       </body>
     </html>
