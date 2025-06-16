@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import Image from 'next/image'
 
 const navigation = [
   { name: '학원소개', href: '#about' },
@@ -38,16 +39,21 @@ export default function Navbar() {
             <div className="relative flex items-center justify-between h-16">
               {/* 로고 */}
               <motion.a
-                href="#"
+                href="/"
                 className="flex-shrink-0"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <img
-                  className="h-8 w-auto"
-                  src="/logo.png"
-                  alt="엔게이지 아카데미"
-                />
+                <div className="relative h-8 w-auto">
+                  <Image
+                    src="/logo.png"
+                    alt="엔게이지 아카데미"
+                    fill
+                    className="object-contain"
+                    sizes="160px"
+                    priority
+                  />
+                </div>
               </motion.a>
 
               {/* 데스크탑 메뉴 */}

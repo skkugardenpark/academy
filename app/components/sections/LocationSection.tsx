@@ -3,13 +3,35 @@ import { motion } from 'framer-motion'
 import SectionTitle from '../common/SectionTitle'
 import AnimatedSection from '../common/AnimatedSection'
 
+interface KakaoLatLng {
+  getLat(): number;
+  getLng(): number;
+}
+
+interface KakaoMap {
+  setCenter(position: KakaoLatLng): void;
+  getCenter(): KakaoLatLng;
+  setLevel(level: number): void;
+  getLevel(): number;
+}
+
+interface KakaoMarker {
+  setMap(map: KakaoMap | null): void;
+  getMap(): KakaoMap | null;
+}
+
+interface KakaoCustomOverlay {
+  setMap(map: KakaoMap | null): void;
+  getMap(): KakaoMap | null;
+}
+
 interface KakaoMaps {
   maps: {
-    load: (callback: () => void) => void;
-    Map: new (container: HTMLElement, options: any) => any;
-    LatLng: new (lat: number, lng: number) => any;
-    Marker: new (options: { position: any }) => any;
-    CustomOverlay: new (options: { position: any; content: string; yAnchor: number }) => any;
+    load(callback: () => void): void;
+    Map: new (container: HTMLElement, options: { center: KakaoLatLng; level: number }) => KakaoMap;
+    LatLng: new (lat: number, lng: number) => KakaoLatLng;
+    Marker: new (options: { position: KakaoLatLng }) => KakaoMarker;
+    CustomOverlay: new (options: { position: KakaoLatLng; content: string; yAnchor: number }) => KakaoCustomOverlay;
   }
 }
 
@@ -29,6 +51,8 @@ export default function LocationSection() {
     const onLoadKakaoMap = () => {
       window.kakao.maps.load(() => {
         const container = document.getElementById('map')
+        if (!container) return
+
         const options = {
           center: new window.kakao.maps.LatLng(37.5012, 127.0396),
           level: 3

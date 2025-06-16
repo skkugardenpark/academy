@@ -1,16 +1,22 @@
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function HeroSection() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* 배경 이미지 */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/50 to-primary/80" />
-        <img
-          src="/images/hero-bg.jpg"
-          alt="학원 배경"
-          className="w-full h-full object-cover"
-        />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/50 to-primary/80 z-10" />
+        <div className="relative w-full h-full">
+          <Image
+            src="/images/hero-bg.jpg"
+            alt="학원 배경"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
+        </div>
       </div>
 
       {/* 컨텐츠 */}

@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
+import Image from 'next/image'
 
 const testimonials = [
   {
@@ -79,11 +80,15 @@ export default function TestimonialsSection() {
                 className="bg-white rounded-xl shadow-lg p-6 h-full"
               >
                 <div className="flex items-center mb-4">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover mr-4"
-                  />
+                  <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
+                    <Image
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      fill
+                      className="object-cover"
+                      sizes="48px"
+                    />
+                  </div>
                   <div>
                     <h3 className="font-semibold text-primary">
                       {testimonial.name}

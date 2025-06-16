@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function AboutSection() {
   return (
@@ -53,11 +54,16 @@ export default function AboutSection() {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <img
-              src="/images/about-image.jpg"
-              alt="학원 전경"
-              className="rounded-xl shadow-xl w-full h-[500px] object-cover"
-            />
+            <div className="relative h-[500px] w-full rounded-xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/about-image.jpg"
+                alt="학원 전경"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+            </div>
             <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg">
               <p className="text-4xl font-bold text-primary">10년+</p>
               <p className="text-gray-600">교육 노하우</p>

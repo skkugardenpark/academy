@@ -31,7 +31,7 @@ export default function ContactSection() {
     reset
   } = useForm<ContactFormData>()
 
-  const onSubmit = async (data: ContactFormData) => {
+  const onSubmit = async (formData: ContactFormData) => {
     setIsSubmitting(true)
     try {
       // API 호출 로직
