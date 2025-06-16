@@ -45,81 +45,131 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-mint-light/80 backdrop-blur-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-secondary/60 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/images/logo.png"
-              alt="Engage Academy"
-              width={150}
+              src="/images/logo.svg"
+              alt="Engage Academy Logo"
+              width={40}
               height={40}
-              className="h-10 w-auto"
+              className="w-10 h-10"
             />
+            <span className="text-xl font-bold text-primary">Engage Academy</span>
           </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {menuItems.map((item) => (
-              <a
-                key={item.href}
-                href={`#${item.href}`}
-                onClick={(e) => handleClick(e, item.href)}
-                className={`text-sm font-medium transition-all duration-300 hover:text-primary ${
-                  isScrolled ? 'text-gray-100' : 'text-white'
-                } relative after:content-[''] after:absolute after:left-0 after:-bottom-1 
-                after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300
-                hover:after:w-full`}
-              >
-                {item.label}
-              </a>
-            ))}
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <Link href="#about" className="text-dark hover:text-primary transition-colors">
+              학원소개
+            </Link>
+            <Link href="#curriculum" className="text-dark hover:text-primary transition-colors">
+              커리큘럼
+            </Link>
+            <Link href="#teachers" className="text-dark hover:text-primary transition-colors">
+              강사진
+            </Link>
+            <Link href="#gallery" className="text-dark hover:text-primary transition-colors">
+              갤러리
+            </Link>
+            <Link href="#contact" className="text-dark hover:text-primary transition-colors">
+              수강신청
+            </Link>
+            <Link href="#faq" className="text-dark hover:text-primary transition-colors">
+              FAQ
+            </Link>
+            <Link href="#location" className="text-dark hover:text-primary transition-colors">
+              오시는길
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-white hover:text-primary focus:outline-none"
+            className="md:hidden text-dark hover:text-primary transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              {isOpen ? (
+            {isOpen ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
+              </svg>
+            )}
           </button>
-        </div>
-      </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden fixed inset-0 z-40 pt-20 bg-dark-light/95 backdrop-blur-sm"
-          >
-            <div className="container mx-auto px-4 py-6">
-              <div className="flex flex-col space-y-4">
-                {menuItems.map((item) => (
-                  <a
-                    key={item.href}
-                    href={`#${item.href}`}
-                    onClick={(e) => handleClick(e, item.href)}
-                    className="text-gray-100 hover:text-primary text-lg font-medium py-2
-                    transition-all duration-300 border-b border-gray-700/30"
-                  >
-                    {item.label}
-                  </a>
-                ))}
+          {/* Mobile Menu */}
+          <div className={`
+            md:hidden fixed inset-0 bg-white z-50 transform transition-transform duration-300 ease-in-out
+            ${isOpen ? 'translate-x-0' : 'translate-x-full'}
+          `}>
+            <div className="flex flex-col p-8">
+              <button
+                className="self-end text-dark hover:text-primary transition-colors mb-8"
+                onClick={() => setIsOpen(false)}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <div className="flex flex-col space-y-6">
+                <Link
+                  href="#about"
+                  className="text-dark hover:text-primary transition-colors text-lg"
+                  onClick={() => setIsOpen(false)}
+                >
+                  학원소개
+                </Link>
+                <Link
+                  href="#curriculum"
+                  className="text-dark hover:text-primary transition-colors text-lg"
+                  onClick={() => setIsOpen(false)}
+                >
+                  커리큘럼
+                </Link>
+                <Link
+                  href="#teachers"
+                  className="text-dark hover:text-primary transition-colors text-lg"
+                  onClick={() => setIsOpen(false)}
+                >
+                  강사진
+                </Link>
+                <Link
+                  href="#gallery"
+                  className="text-dark hover:text-primary transition-colors text-lg"
+                  onClick={() => setIsOpen(false)}
+                >
+                  갤러리
+                </Link>
+                <Link
+                  href="#contact"
+                  className="text-dark hover:text-primary transition-colors text-lg"
+                  onClick={() => setIsOpen(false)}
+                >
+                  수강신청
+                </Link>
+                <Link
+                  href="#faq"
+                  className="text-dark hover:text-primary transition-colors text-lg"
+                  onClick={() => setIsOpen(false)}
+                >
+                  FAQ
+                </Link>
+                <Link
+                  href="#location"
+                  className="text-dark hover:text-primary transition-colors text-lg"
+                  onClick={() => setIsOpen(false)}
+                >
+                  오시는길
+                </Link>
               </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+        </div>
+      </div>
     </nav>
   )
 } 
