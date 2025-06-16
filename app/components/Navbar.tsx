@@ -14,23 +14,10 @@ const navItems = [
 ]
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
-    <nav 
-      className={`fixed w-full z-50 transition-all duration-300 bg-white ${
-        isScrolled ? 'shadow-sm' : ''
-      }`}
-    >
+    <nav className="fixed w-full z-50 bg-white shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
