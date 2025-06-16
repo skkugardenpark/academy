@@ -3,59 +3,33 @@ import { useRef } from 'react'
 
 interface ScrollAnimationProps {
   children: React.ReactNode
-  direction?: 'up' | 'down' | 'left' | 'right'
-  delay?: number
-  duration?: number
   className?: string
 }
 
 export default function ScrollAnimation({
   children,
-  direction = 'up',
-  delay = 0,
-  duration = 0.5,
   className = ''
 }: ScrollAnimationProps) {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['0 1', '1.2 1']
+    offset: ['0 1', '0.5 1']
   })
 
-  const getInitialPosition = () => {
-    switch (direction) {
-      case 'up':
-        return 100
-      case 'down':
-        return -100
-      case 'left':
-        return 100
-      case 'right':
-        return -100
-      default:
-        return 0
-    }
-  }
-
-  const getPropertyToAnimate = () => {
-    return direction === 'left' || direction === 'right' ? 'x' : 'y'
-  }
-
-  const y = useTransform(scrollYProgress, [0, 1], [getInitialPosition(), 0])
   const opacity = useTransform(scrollYProgress, [0, 1], [0, 1])
-
-  const motionProps = {
-    ref,
-    style: {
-      [getPropertyToAnimate()]: y,
-      opacity
-    },
-    initial: { opacity: 0, [getPropertyToAnimate()]: getInitialPosition() },
-    transition: { duration, delay }
-  }
+  const y = useTransform(scrollYProgress, [0, 1], [50, 0])
 
   return (
-    <motion.div className={className} {...motionProps}>
+    <motion.div
+      ref={ref}
+      className={className}
+      style={{
+        opacity,
+        y,
+      }}
+      initial={{ opacity: 0, y: 50 }}
+      transition={{ duration: 0.6 }}
+    >
       {children}
     </motion.div>
   )

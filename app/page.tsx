@@ -11,13 +11,12 @@ import FAQSection from './components/sections/FAQSection'
 import LocationSection from './components/sections/LocationSection'
 import ContactSection from './components/sections/ContactSection'
 import TestimonialsSection from './components/sections/TestimonialsSection'
-import BackgroundEffect from './components/effects/BackgroundEffect'
 import ScrollAnimation from './components/effects/ScrollAnimation'
 
 export default function Home() {
   return (
-    <main className="relative">
-      <BackgroundEffect />
+    <main className="relative bg-gradient-to-b from-dark via-dark-light to-dark min-h-screen">
+      <div className="absolute inset-0 bg-grid opacity-5" />
       <Navbar />
       <ScrollAnimation>
         <HeroSection />
