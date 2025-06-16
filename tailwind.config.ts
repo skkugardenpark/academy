@@ -10,14 +10,24 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#0B2545',
-          light: '#1E3D5C',
-          dark: '#081B35',
+          DEFAULT: '#8BE8CB',
+          dark: '#5AC4A8',
+          light: '#A5F0D8'
+        },
+        secondary: {
+          DEFAULT: '#6C63FF',
+          dark: '#4B44CC',
+          light: '#8A84FF'
+        },
+        dark: {
+          DEFAULT: '#040D21',
+          light: '#0A1930',
+          lighter: '#162B4D'
         },
         mint: {
-          DEFAULT: '#E1F5F2',
-          light: '#F0FAF8',
-          dark: '#C4EAE4',
+          DEFAULT: '#8BE8CB',
+          dark: '#5AC4A8',
+          light: '#A5F0D8'
         },
         gold: {
           DEFAULT: '#D4AF37',
@@ -66,6 +76,7 @@ const config: Config = {
         'pulse-gold': 'pulseGold 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'gradient': 'gradient 8s ease infinite',
         'shimmer': 'shimmer 2s linear infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite'
       },
       keyframes: {
         fadeIn: {
@@ -78,7 +89,7 @@ const config: Config = {
         },
         float: {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-10px)' },
+          '50%': { transform: 'translateY(-20px)' },
         },
         pulseGold: {
           '0%, 100%': { opacity: '1' },
@@ -99,6 +110,7 @@ const config: Config = {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'gradient-glass': 'linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%)',
         'shimmer': 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%)',
+        'grid': "url('/patterns/grid.svg')"
       },
     },
   },

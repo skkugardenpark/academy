@@ -1,53 +1,5 @@
-import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import SectionTitle from '../common/SectionTitle'
-import AnimatedSection from '../common/AnimatedSection'
-import Script from 'next/script'
-
-interface KakaoLatLng {
-  getLat(): number;
-  getLng(): number;
-}
-
-interface KakaoMap {
-  setCenter(position: KakaoLatLng): void;
-  getCenter(): KakaoLatLng;
-  setLevel(level: number): void;
-  getLevel(): number;
-}
-
-interface KakaoMarker {
-  setMap(map: KakaoMap | null): void;
-  getMap(): KakaoMap | null;
-  getPosition(): KakaoLatLng;
-}
-
-interface KakaoCustomOverlay {
-  setMap(map: KakaoMap | null): void;
-  getMap(): KakaoMap | null;
-}
-
-interface KakaoInfoWindow {
-  open(map: KakaoMap, marker: KakaoMarker): void;
-  close(): void;
-}
-
-interface KakaoMaps {
-  maps: {
-    load(callback: () => void): void;
-    Map: new (container: HTMLElement, options: { center: KakaoLatLng; level: number }) => KakaoMap;
-    LatLng: new (lat: number, lng: number) => KakaoLatLng;
-    Marker: new (options: { position: KakaoLatLng }) => KakaoMarker;
-    CustomOverlay: new (options: { position: KakaoLatLng; content: string; yAnchor: number }) => KakaoCustomOverlay;
-    InfoWindow: new (options: { content: string }) => KakaoInfoWindow;
-  }
-}
-
-declare global {
-  interface Window {
-    kakao: KakaoMaps
-  }
-}
 
 const floatingAnimation = {
   animate: {
@@ -62,44 +14,6 @@ const floatingAnimation = {
 }
 
 export default function LocationSection() {
-  useEffect(() => {
-    const mapScript = document.createElement('script')
-    mapScript.async = true
-    mapScript.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_MAP_KEY}&autoload=false`
-    document.head.appendChild(mapScript)
-
-    const onLoadKakaoMap = () => {
-      window.kakao.maps.load(() => {
-        const container = document.getElementById('map')
-        if (!container) return
-
-        const options = {
-          center: new window.kakao.maps.LatLng(37.5012, 127.0396),
-          level: 3
-        }
-        const map = new window.kakao.maps.Map(container, options)
-
-        // 마커 생성
-        const markerPosition = new window.kakao.maps.LatLng(37.5012, 127.0396)
-        const marker = new window.kakao.maps.Marker({
-          position: markerPosition
-        })
-        marker.setMap(map)
-
-        // 인포윈도우 추가
-        const iwContent = '<div style="padding:5px;">엔게이지 아카데미</div>'
-        const infowindow = new window.kakao.maps.InfoWindow({
-          content: iwContent
-        })
-        infowindow.open(map, marker)
-      })
-    }
-
-    mapScript.addEventListener('load', onLoadKakaoMap)
-
-    return () => mapScript.removeEventListener('load', onLoadKakaoMap)
-  }, [])
-
   return (
     <section id="location" className="py-20 relative overflow-hidden">
       {/* Decorative Elements */}
@@ -119,14 +33,34 @@ export default function LocationSection() {
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Map */}
-          <AnimatedSection animation="slide-right">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <div className="glass-effect rounded-2xl overflow-hidden shadow-lg">
-              <div id="map" className="w-full h-[400px]" />
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.352684310404!2d127.02663147677384!3d37.49798657205619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca157b757b7c5%3A0x168510caec9b0097!2z6rCV64Ko7Jet!5e0!3m2!1sko!2skr!4v1710574323039!5m2!1sko!2skr"
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-[400px]"
+              />
             </div>
-          </AnimatedSection>
+          </motion.div>
 
           {/* Location Info */}
-          <AnimatedSection animation="slide-left" className="space-y-8">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
             <div className="glass-effect rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-primary mb-6">
                 강남 캠퍼스
@@ -195,7 +129,7 @@ export default function LocationSection() {
                 </div>
               </div>
             </div>
-          </AnimatedSection>
+          </motion.div>
         </div>
       </div>
     </section>

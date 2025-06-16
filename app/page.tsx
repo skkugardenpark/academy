@@ -11,20 +11,41 @@ import FAQSection from './components/sections/FAQSection'
 import LocationSection from './components/sections/LocationSection'
 import ContactSection from './components/sections/ContactSection'
 import TestimonialsSection from './components/sections/TestimonialsSection'
+import BackgroundEffect from './components/effects/BackgroundEffect'
+import ScrollAnimation from './components/effects/ScrollAnimation'
 
 export default function Home() {
   return (
-    <main>
+    <main className="relative">
+      <BackgroundEffect />
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <CurriculumSection />
-      <InstructorsSection />
-      <GallerySection />
-      <TestimonialsSection />
-      <FAQSection />
-      <LocationSection />
-      <ContactSection />
+      <ScrollAnimation>
+        <HeroSection />
+      </ScrollAnimation>
+      <ScrollAnimation>
+        <AboutSection />
+      </ScrollAnimation>
+      <ScrollAnimation>
+        <CurriculumSection />
+      </ScrollAnimation>
+      <ScrollAnimation>
+        <InstructorsSection />
+      </ScrollAnimation>
+      <ScrollAnimation>
+        <GallerySection />
+      </ScrollAnimation>
+      <ScrollAnimation>
+        <TestimonialsSection />
+      </ScrollAnimation>
+      <ScrollAnimation>
+        <FAQSection />
+      </ScrollAnimation>
+      <ScrollAnimation>
+        <LocationSection />
+      </ScrollAnimation>
+      <ScrollAnimation>
+        <ContactSection />
+      </ScrollAnimation>
       <Footer />
     </main>
   )

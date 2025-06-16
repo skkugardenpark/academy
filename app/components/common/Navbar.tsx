@@ -3,19 +3,22 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Disclosure } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
+import Link from 'next/link'
 
-const navigation = [
-  { name: '학원소개', href: '#about' },
-  { name: '커리큘럼', href: '#curriculum' },
-  { name: '강사진', href: '#instructors' },
-  { name: '수강후기', href: '#reviews' },
-  { name: '갤러리', href: '#gallery' },
-  { name: 'FAQ', href: '#faq' },
-  { name: '오시는 길', href: '#location' },
+const menuItems = [
+  { href: '#about', label: '학원소개' },
+  { href: '#curriculum', label: '커리큘럼' },
+  { href: '#instructors', label: '강사진' },
+  { href: '#gallery', label: '갤러리' },
+  { href: '#testimonials', label: '수강후기' },
+  { href: '#faq', label: 'FAQ' },
+  { href: '#location', label: '오시는 길' },
+  { href: '#contact', label: '상담신청' },
 ]
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,94 +29,114 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    const targetId = href.substring(1) // '#testimonials' -> 'testimonials'
+    const element = document.getElementById(targetId)
+    
+    if (element) {
+      const navbarHeight = 80
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY
+      const offsetPosition = elementPosition - navbarHeight
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      })
+      
+      setIsOpen(false)
+    }
+  }
+
   return (
-    <Disclosure
-      as="nav"
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
-      }`}
-    >
-      {({ open }) => (
-        <>
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="relative flex items-center justify-between h-16">
-              {/* 로고 */}
-              <motion.a
-                href="/"
-                className="flex-shrink-0"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="relative h-8 w-auto">
-                  <Image
-                    src="/logo.png"
-                    alt="엔게이지 아카데미"
-                    fill
-                    className="object-contain"
-                    sizes="160px"
-                    priority
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled ? 'bg-white shadow-lg' : 'bg-transparent'
+        }`}
+      >
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/images/logo.png"
+                alt="Engage Academy"
+                width={150}
+                height={40}
+                className="h-10 w-auto"
+              />
+            </Link>
+
+            {/* Desktop Menu */}
+            <div className="hidden lg:flex items-center space-x-8">
+              {menuItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => handleClick(e, item.href)}
+                  className={`text-sm font-medium transition-colors duration-300 ${
+                    isScrolled ? 'text-gray-900 hover:text-mint' : 'text-white hover:text-mint'
+                  }`}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden text-gray-600 hover:text-gray-900 focus:outline-none"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {isOpen ? (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
                   />
-                </div>
-              </motion.a>
+                ) : (
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                )}
+              </svg>
+            </button>
+          </div>
+        </div>
+      </nav>
 
-              {/* 데스크탑 메뉴 */}
-              <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-4">
-                  {navigation.map((item) => (
-                    <motion.a
-                      key={item.name}
-                      href={item.href}
-                      className={`px-3 py-2 rounded-md text-sm font-medium ${
-                        isScrolled
-                          ? 'text-gray-700 hover:text-primary'
-                          : 'text-white hover:text-mint'
-                      }`}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      {item.name}
-                    </motion.a>
-                  ))}
-                </div>
-              </div>
-
-              {/* 모바일 메뉴 버튼 */}
-              <div className="md:hidden">
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-primary focus:outline-none">
-                  {open ? (
-                    <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
-                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                  )}
-                </Disclosure.Button>
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="lg:hidden fixed inset-0 z-40 pt-20 bg-white"
+          >
+            <div className="container mx-auto px-4 py-6">
+              <div className="flex flex-col space-y-4">
+                {menuItems.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    onClick={(e) => handleClick(e, item.href)}
+                    className="text-gray-900 hover:text-mint text-lg font-medium py-2"
+                  >
+                    {item.label}
+                  </a>
+                ))}
               </div>
             </div>
-          </div>
-
-          {/* 모바일 메뉴 패널 */}
-          <AnimatePresence>
-            <Disclosure.Panel className="md:hidden">
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                className="px-2 pt-2 pb-3 space-y-1 bg-white shadow-lg"
-              >
-                {navigation.map((item) => (
-                  <Disclosure.Button
-                    key={item.name}
-                    as="a"
-                    href={item.href}
-                    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-mint"
-                  >
-                    {item.name}
-                  </Disclosure.Button>
-                ))}
-              </motion.div>
-            </Disclosure.Panel>
-          </AnimatePresence>
-        </>
-      )}
-    </Disclosure>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   )
 } 
