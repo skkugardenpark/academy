@@ -1,171 +1,48 @@
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import Image from 'next/image'
 import Link from 'next/link'
-
-const menuItems = [
-  { href: 'about', label: '학원소개' },
-  { href: 'curriculum', label: '커리큘럼' },
-  { href: 'instructors', label: '강사진' },
-  { href: 'gallery', label: '갤러리' },
-  { href: 'testimonials', label: '수강후기' },
-  { href: 'faq', label: 'FAQ' },
-  { href: 'location', label: '오시는 길' },
-  { href: 'contact', label: '상담신청' },
-]
+import { useState } from 'react'
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
-    e.preventDefault()
-    const element = document.getElementById(sectionId)
-    if (element) {
-      const offset = 80 // 네비게이션 바 높이
-      const bodyRect = document.body.getBoundingClientRect().top
-      const elementRect = element.getBoundingClientRect().top
-      const elementPosition = elementRect - bodyRect
-      const offsetPosition = elementPosition - offset
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      })
-      setIsOpen(false)
-    }
+  const toggleMenu = () => {
+    setIsOpen(!isOpen)
   }
 
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white/80 backdrop-blur-sm shadow-sm' : 'bg-transparent'
-      }`}
-    >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-primary-100/20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center">
-            <span className="text-xl font-bold text-primary">English Academy</span>
+            <span className="text-xl font-bold text-primary">ENG Academy</span>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="#about" className="text-neutral-700 hover:text-primary transition-colors">
-              학원소개
-            </Link>
-            <Link href="#curriculum" className="text-neutral-700 hover:text-primary transition-colors">
-              커리큘럼
-            </Link>
-            <Link href="#instructors" className="text-neutral-700 hover:text-primary transition-colors">
-              강사진
-            </Link>
-            <Link href="#gallery" className="text-neutral-700 hover:text-primary transition-colors">
-              갤러리
-            </Link>
-            <Link href="#contact" className="text-neutral-700 hover:text-primary transition-colors">
-              수강신청
-            </Link>
-            <Link href="#faq" className="text-neutral-700 hover:text-primary transition-colors">
-              FAQ
-            </Link>
-            <Link href="#location" className="text-neutral-700 hover:text-primary transition-colors">
-              오시는길
-            </Link>
+            <Link href="#about" className="text-neutral-600 hover:text-primary">소개</Link>
+            <Link href="#programs" className="text-neutral-600 hover:text-primary">프로그램</Link>
+            <Link href="#curriculum" className="text-neutral-600 hover:text-primary">커리큘럼</Link>
+            <Link href="#contact" className="text-neutral-600 hover:text-primary">문의하기</Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-neutral-700 hover:text-primary transition-colors"
-            onClick={() => setIsOpen(!isOpen)}
+          <button 
+            onClick={toggleMenu}
+            className="md:hidden p-2"
           >
-            {isOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
+            <span className={`block w-6 h-0.5 bg-neutral-600 transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+            <span className={`block w-6 h-0.5 bg-neutral-600 mt-1 ${isOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`block w-6 h-0.5 bg-neutral-600 mt-1 transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
           </button>
+        </div>
 
-          {/* Mobile Menu */}
-          <div className={`
-            md:hidden fixed inset-0 bg-white z-50 transform transition-transform duration-300 ease-in-out
-            ${isOpen ? 'translate-x-0' : 'translate-x-full'}
-          `}>
-            <div className="flex flex-col p-8">
-              <button
-                className="self-end text-neutral-700 hover:text-primary transition-colors mb-8"
-                onClick={() => setIsOpen(false)}
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-              <div className="flex flex-col space-y-6">
-                <Link
-                  href="#about"
-                  className="text-neutral-700 hover:text-primary transition-colors text-lg"
-                  onClick={() => setIsOpen(false)}
-                >
-                  학원소개
-                </Link>
-                <Link
-                  href="#curriculum"
-                  className="text-neutral-700 hover:text-primary transition-colors text-lg"
-                  onClick={() => setIsOpen(false)}
-                >
-                  커리큘럼
-                </Link>
-                <Link
-                  href="#instructors"
-                  className="text-neutral-700 hover:text-primary transition-colors text-lg"
-                  onClick={() => setIsOpen(false)}
-                >
-                  강사진
-                </Link>
-                <Link
-                  href="#gallery"
-                  className="text-neutral-700 hover:text-primary transition-colors text-lg"
-                  onClick={() => setIsOpen(false)}
-                >
-                  갤러리
-                </Link>
-                <Link
-                  href="#contact"
-                  className="text-neutral-700 hover:text-primary transition-colors text-lg"
-                  onClick={() => setIsOpen(false)}
-                >
-                  수강신청
-                </Link>
-                <Link
-                  href="#faq"
-                  className="text-neutral-700 hover:text-primary transition-colors text-lg"
-                  onClick={() => setIsOpen(false)}
-                >
-                  FAQ
-                </Link>
-                <Link
-                  href="#location"
-                  className="text-neutral-700 hover:text-primary transition-colors text-lg"
-                  onClick={() => setIsOpen(false)}
-                >
-                  오시는길
-                </Link>
-              </div>
+        {isOpen && (
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              <Link href="#about" className="block px-3 py-2 text-neutral-600 hover:text-primary">소개</Link>
+              <Link href="#programs" className="block px-3 py-2 text-neutral-600 hover:text-primary">프로그램</Link>
+              <Link href="#curriculum" className="block px-3 py-2 text-neutral-600 hover:text-primary">커리큘럼</Link>
+              <Link href="#contact" className="block px-3 py-2 text-neutral-600 hover:text-primary">문의하기</Link>
             </div>
           </div>
-        </div>
+        )}
       </div>
     </nav>
   )

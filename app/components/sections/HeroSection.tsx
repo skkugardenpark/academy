@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import { motion } from 'framer-motion'
+import Button from '../common/Button'
 
 export default function HeroSection() {
   return (
