@@ -40,7 +40,7 @@
   .btn-secondary {
     @apply inline-flex items-center px-6 py-3 rounded-full font-semibold
     bg-white text-primary border border-primary/20
-    hover:bg-primary-50 hover:bg-opacity-50
+    hover:bg-primary/5
     hover:border-primary-200
     hover:shadow-[0_8px_30px_rgb(255,107,107,0.15)]
     hover:-translate-y-0.5
@@ -143,7 +143,7 @@ html {
   @apply bg-white text-primary rounded-xl px-6 py-3
          border border-primary-100
          shadow-[0_4px_20px_rgb(255,107,107,0.1)]
-         hover:bg-primary-50 hover:bg-opacity-50
+         hover:bg-primary/5
          hover:border-primary-200
          hover:shadow-[0_8px_30px_rgb(255,107,107,0.15)]
          hover:-translate-y-0.5
@@ -188,7 +188,7 @@ h3 {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-primary-50;
+  @apply bg-primary-100;
 }
 
 ::-webkit-scrollbar-thumb {
