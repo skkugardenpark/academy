@@ -7,6 +7,7 @@ interface AnimatedSectionProps {
   delay?: number
   animation?: 'fade' | 'slide-up' | 'slide-left' | 'slide-right' | 'scale' | 'float'
   withGlass?: boolean
+  id?: string
 }
 
 interface AnimationConfig {
@@ -63,7 +64,8 @@ export default function AnimatedSection({
   className = '',
   delay = 0,
   animation = 'fade',
-  withGlass = false
+  withGlass = false,
+  id
 }: AnimatedSectionProps) {
   const animationProps = {
     ...animations[animation],
@@ -76,6 +78,7 @@ export default function AnimatedSection({
 
   return (
     <motion.div
+      id={id}
       className={`
         ${className}
         ${withGlass ? 'glass-effect' : ''}
