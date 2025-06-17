@@ -5,15 +5,11 @@ export default function Document() {
     <Html lang="ko">
       <Head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
           rel="stylesheet"
         />
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&display=swap" 
-          rel="stylesheet"
-        />
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" 
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"
           rel="stylesheet"
         />
       </Head>

@@ -1,36 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-
-const footerLinks = [
-  {
-    title: '학원 소개',
-    links: [
-      { label: '학원 소개', href: '#about' },
-      { label: '강사진', href: '#instructors' },
-      { label: '시설 안내', href: '#gallery' },
-      { label: '오시는 길', href: '#location' },
-    ],
-  },
-  {
-    title: '교육 과정',
-    links: [
-      { label: '커리큘럼', href: '#curriculum' },
-      { label: '수강 후기', href: '#testimonials' },
-      { label: '자주 묻는 질문', href: '#faq' },
-      { label: '상담 신청', href: '#contact' },
-    ],
-  },
-  {
-    title: '연락처',
-    links: [
-      { label: 'Tel: 02-1234-5678', href: 'tel:02-1234-5678' },
-      { label: 'Email: info@engacademy.com', href: 'mailto:info@engacademy.com' },
-      { label: '카카오톡 상담', href: '#' },
-      { label: '네이버 블로그', href: '#' },
-    ],
-  },
-]
 
 export default function Footer() {
   return (
