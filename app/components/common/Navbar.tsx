@@ -49,15 +49,8 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <Image
-              src="/images/logo.svg"
-              alt="Engage Academy Logo"
-              width={40}
-              height={40}
-              className="w-10 h-10"
-            />
-            <span className="text-xl font-bold text-primary">Engage Academy</span>
+          <Link href="/" className="flex items-center">
+            <span className="text-xl font-bold text-primary">English Academy</span>
           </Link>
 
           {/* Desktop Navigation */}
