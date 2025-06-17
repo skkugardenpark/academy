@@ -61,7 +61,7 @@ export default function LocationSection() {
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <div className="glass-effect rounded-2xl p-8">
+            <div className="rounded-2xl p-8 shadow-lg hover:shadow-2xl border border-primary-100/20 hover:border-primary-200/30 transform hover:-translate-y-3 hover:scale-[1.02] relative overflow-hidden transition-all duration-500" style={{ background: '#F3DEE1' }}>
               <h3 className="text-2xl font-bold text-primary mb-6">
                 강남 캠퍼스
               </h3>
