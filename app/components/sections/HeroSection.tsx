@@ -33,7 +33,7 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="container relative">
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div>
@@ -43,7 +43,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="gradient-text">영어의 새로운 시작</span>
+              <span className="text-primary">영어의 새로운 시작</span>
             </motion.h1>
             
             <motion.p 
@@ -63,10 +63,10 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <button className="btn-primary">
+              <button className="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 transition-all">
                 무료 레벨 테스트
               </button>
-              <button className="btn-secondary">
+              <button className="bg-white text-primary px-8 py-3 rounded-full border-2 border-primary hover:bg-primary/5 transition-all">
                 커리큘럼 살펴보기
               </button>
             </motion.div>
@@ -81,12 +81,31 @@ export default function HeroSection() {
           >
             <div className="relative aspect-square max-w-xl mx-auto">
               <Image
-                src="/images/hero-image.png"
+                src="/images/hero-student.jpg"
                 alt="영어 교육 이미지"
                 fill
-                className="object-contain"
+                className="object-cover rounded-2xl shadow-2xl"
                 priority
               />
+              {/* Floating Stats Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="bg-primary/10 p-3 rounded-lg">
+                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">누적 수강생</p>
+                    <p className="text-2xl font-bold text-gray-900">1,000+</p>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
