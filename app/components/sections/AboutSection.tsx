@@ -134,30 +134,32 @@ export default function AboutSection() {
                 </div>
               </div>
 
-              {/* 플로팅 통계 카드들 */}
-              <motion.div
-                className="absolute -top-6 -right-6 stat-card"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 4, repeat: Infinity }}
-              >
-                <div className="text-center">
-                  <div className="text-3xl mb-2">🏆</div>
-                  <div className="text-2xl font-bold text-primary">98%</div>
-                  <div className="text-sm text-warm-600">학생 만족도</div>
-                </div>
-              </motion.div>
+              {/* 플로팅 통계 카드들 - 1x1 정렬 */}
+              <div className="absolute -top-8 -right-8 space-y-4">
+                <motion.div
+                  className="stat-card w-28 h-28"
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                >
+                  <div className="text-center h-full flex flex-col justify-center">
+                    <div className="text-2xl mb-1">🏆</div>
+                    <div className="text-xl font-bold text-primary">98%</div>
+                    <div className="text-xs text-warm-600">학생 만족도</div>
+                  </div>
+                </motion.div>
 
-              <motion.div
-                className="absolute -bottom-6 -left-6 stat-card"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, delay: 2 }}
-              >
-                <div className="text-center">
-                  <div className="text-3xl mb-2">📈</div>
-                  <div className="text-2xl font-bold text-primary">85%</div>
-                  <div className="text-sm text-warm-600">성적 향상률</div>
-                </div>
-              </motion.div>
+                <motion.div
+                  className="stat-card w-28 h-28"
+                  animate={{ y: [0, 8, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, delay: 2 }}
+                >
+                  <div className="text-center h-full flex flex-col justify-center">
+                    <div className="text-2xl mb-1">📈</div>
+                    <div className="text-xl font-bold text-primary">85%</div>
+                    <div className="text-xs text-warm-600">성적 향상률</div>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </motion.div>
 
