@@ -72,7 +72,7 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Image */}
+          {/* 3D Graphic Elements */}
           <motion.div
             className="relative"
             initial={{ opacity: 0, scale: 0.8 }}
@@ -80,14 +80,47 @@ export default function HeroSection() {
             transition={{ duration: 0.8 }}
           >
             <div className="relative aspect-square max-w-xl mx-auto">
-              <Image
-                src="/images/hero-student.jpg"
-                alt="영어 교육 이미지"
-                fill
-                className="object-cover rounded-2xl shadow-2xl"
-                priority
-              />
-              {/* Floating Stats Card */}
+              {/* 3D Floating Elements */}
+              <div className="absolute inset-0">
+                <motion.div
+                  className="absolute top-0 left-0 w-32 h-32 bg-primary/20 rounded-2xl"
+                  animate={{
+                    y: [0, -20, 0],
+                    rotate: [0, 10, 0],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                  }}
+                />
+                <motion.div
+                  className="absolute top-1/4 right-1/4 w-40 h-40 bg-secondary/20 rounded-full"
+                  animate={{
+                    y: [-20, 0, -20],
+                    rotate: [10, 0, 10],
+                  }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                  }}
+                />
+                <motion.div
+                  className="absolute bottom-1/3 left-1/3 w-36 h-36 bg-primary/10 rounded-3xl"
+                  animate={{
+                    y: [10, -10, 10],
+                    rotate: [-5, 5, -5],
+                  }}
+                  transition={{
+                    duration: 6,
+                    repeat: Infinity,
+                    repeatType: "reverse",
+                  }}
+                />
+              </div>
+
+              {/* Stats Cards */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -103,6 +136,26 @@ export default function HeroSection() {
                   <div>
                     <p className="text-sm text-gray-600">누적 수강생</p>
                     <p className="text-2xl font-bold text-gray-900">1,000+</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Additional Stats Card */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.8 }}
+                className="absolute -left-6 top-1/2 bg-white p-6 rounded-xl shadow-lg"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="bg-secondary/10 p-3 rounded-lg">
+                    <svg className="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">강의 만족도</p>
+                    <p className="text-2xl font-bold text-gray-900">98%</p>
                   </div>
                 </div>
               </motion.div>
