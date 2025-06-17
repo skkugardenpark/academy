@@ -226,7 +226,7 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-primary-50;
+  @apply bg-primary-100;
 }
 
 ::-webkit-scrollbar-thumb {
