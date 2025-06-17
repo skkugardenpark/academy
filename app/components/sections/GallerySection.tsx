@@ -41,18 +41,6 @@ const images = [
   }
 ]
 
-const floatingAnimation = {
-  animate: {
-    scale: [1, 1.2, 1],
-    opacity: [0.3, 0.5, 0.3],
-  },
-  transition: {
-    duration: 8,
-    repeat: Infinity,
-    repeatType: "reverse" as const,
-  }
-}
-
 export default function GallerySection() {
   return (
     <AnimatedSection className="section-padding bg-neutral-50">

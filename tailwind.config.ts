@@ -142,6 +142,10 @@ const config: Config = {
       pattern: /(bg|text|border)-(primary|accent|neutral)-(light|dark|DEFAULT|50|100|200|300|400|500|600|700|800|900|peach|coral|rose|pink|warm)/,
       variants: ['hover', 'focus'],
     },
+    {
+      pattern: /(bg|text|border)-(white|black)/,
+      variants: ['hover', 'focus'],
+    }
   ],
 };
 
