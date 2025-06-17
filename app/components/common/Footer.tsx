@@ -34,76 +34,76 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-800 text-neutral-100">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Logo and Description */}
-          <div className="space-y-6">
-            <div className="text-2xl font-bold text-primary-light">
-              Engage Academy
-            </div>
-            <p className="text-neutral-400 text-sm leading-relaxed">
-              최고의 강사진과 체계적인 커리큘럼으로 
-              여러분의 영어 실력 향상을 돕습니다.
-              글로벌 인재로 성장하는 첫걸음을 
-              저희와 함께 시작하세요.
+    <footer className="bg-white border-t border-primary-100/20">
+      <div className="container py-8 md:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 className="text-lg font-semibold mb-4">ENG Academy</h3>
+            <p className="text-neutral-600">
+              최고의 영어 교육을 제공하는 ENG Academy입니다.
             </p>
-            <div className="flex items-center space-x-4 text-sm text-neutral-400">
-              <Link href="#" className="hover:text-primary-light transition-colors duration-300">
-                Instagram
-              </Link>
-              <span>•</span>
-              <Link href="#" className="hover:text-primary-light transition-colors duration-300">
-                Facebook
-              </Link>
-              <span>•</span>
-              <Link href="#" className="hover:text-primary-light transition-colors duration-300">
-                Blog
-              </Link>
-            </div>
           </div>
-
-          {/* Links */}
-          {footerLinks.map((section) => (
-            <div key={section.title}>
-              <h3 className="text-lg font-semibold mb-6 text-primary-light">{section.title}</h3>
-              <ul className="space-y-4">
-                {section.links.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      href={link.href}
-                      className="text-neutral-400 hover:text-primary-light transition-colors duration-300 text-sm"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          
+          <div>
+            <h4 className="text-lg font-semibold mb-4">프로그램</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link href="#programs" className="text-neutral-600 hover:text-primary">
+                  초급 과정
+                </Link>
+              </li>
+              <li>
+                <Link href="#programs" className="text-neutral-600 hover:text-primary">
+                  중급 과정
+                </Link>
+              </li>
+              <li>
+                <Link href="#programs" className="text-neutral-600 hover:text-primary">
+                  고급 과정
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="text-lg font-semibold mb-4">학원 소개</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link href="#about" className="text-neutral-600 hover:text-primary">
+                  학원 소개
+                </Link>
+              </li>
+              <li>
+                <Link href="#instructors" className="text-neutral-600 hover:text-primary">
+                  강사진 소개
+                </Link>
+              </li>
+              <li>
+                <Link href="#location" className="text-neutral-600 hover:text-primary">
+                  오시는 길
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="text-lg font-semibold mb-4">문의</h4>
+            <ul className="space-y-2">
+              <li className="text-neutral-600">
+                Tel: 02-1234-5678
+              </li>
+              <li className="text-neutral-600">
+                Email: info@engacademy.com
+              </li>
+              <li className="text-neutral-600">
+                서울시 강남구 역삼동 123-45
+              </li>
+            </ul>
+          </div>
         </div>
-
-        {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-neutral-700">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-neutral-400">
-              © 2024 Engage Academy. All rights reserved.
-            </div>
-            <div className="flex space-x-6">
-              <Link
-                href="/privacy"
-                className="text-sm text-neutral-400 hover:text-primary-light transition-colors duration-300"
-              >
-                개인정보처리방침
-              </Link>
-              <Link
-                href="/terms"
-                className="text-sm text-neutral-400 hover:text-primary-light transition-colors duration-300"
-              >
-                이용약관
-              </Link>
-            </div>
-          </div>
+        
+        <div className="mt-8 pt-8 border-t border-primary-100/20 text-center text-neutral-600">
+          <p>&copy; 2024 ENG Academy. All rights reserved.</p>
         </div>
       </div>
     </footer>

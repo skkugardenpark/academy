@@ -59,47 +59,34 @@ export default function GallerySection() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
 
   return (
-    <section id="gallery" className="py-20 relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-mint/10 to-white/5" />
-      <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] opacity-5" />
-      <motion.div
-        className="absolute top-40 -left-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl"
-        animate={floatingAnimation.animate}
-        transition={floatingAnimation.transition}
-      />
-
-      <div className="container mx-auto px-4 relative">
+    <AnimatedSection id="gallery" className="section-padding">
+      <div className="container">
         <SectionTitle
           title="학원 갤러리"
           subtitle="엔게이지 아카데미의 다양한 모습을 소개합니다"
         />
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-          {galleryImages.map((image) => (
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+          {galleryImages.map((image, index) => (
             <motion.div
-              key={image.id}
+              key={index}
+              className="relative group cursor-pointer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: image.id * 0.1 }}
-              className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer"
-              onClick={() => setSelectedImage(image.id)}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              onClick={() => setSelectedImage(index)}
             >
-              <div className="relative h-64 w-full">
+              <div className="relative h-64 overflow-hidden rounded-xl">
                 <Image
                   src={image.src}
                   alt={image.alt}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="text-center text-white p-4">
-                    <h3 className="text-lg font-semibold mb-2">{image.alt}</h3>
-                    <p className="text-sm">{image.description}</p>
-                  </div>
+                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300" />
+                <div className="absolute bottom-0 left-0 right-0 p-4 text-white">
+                  <h3 className="text-lg font-semibold">{image.alt}</h3>
                 </div>
               </div>
             </motion.div>
@@ -134,6 +121,6 @@ export default function GallerySection() {
           </div>
         </div>
       )}
-    </section>
+    </AnimatedSection>
   )
 } 

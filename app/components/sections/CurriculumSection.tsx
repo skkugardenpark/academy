@@ -5,15 +5,6 @@ import Button from '../common/Button'
 import Image from 'next/image'
 
 export default function CurriculumSection() {
-  const floatingAnimation = {
-    y: [0, -20, 0],
-    transition: {
-      duration: 6,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  }
-
   return (
     <AnimatedSection id="curriculum" className="section-padding">
       <div className="container">

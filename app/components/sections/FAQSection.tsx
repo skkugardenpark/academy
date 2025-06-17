@@ -65,69 +65,37 @@ export default function FAQSection() {
   }
 
   return (
-    <section id="faq" className="py-20 relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white to-mint/20" />
-      <div className="absolute inset-0 bg-[url('/patterns/grid.svg')] opacity-5" />
-      <motion.div
-        className="absolute top-40 -right-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-      />
-
-      <div className="container mx-auto px-4 relative">
+    <AnimatedSection id="faq" className="section-padding bg-neutral-50">
+      <div className="container">
         <SectionTitle
           title="자주 묻는 질문"
-          subtitle="English Academy에 대해 궁금하신 점을 확인해보세요"
+          subtitle="궁금하신 점을 확인해보세요"
         />
-
-        <div className="max-w-3xl mx-auto mt-12">
+        
+        <div className="mt-12 space-y-4">
           {faqs.map((faq, index) => (
-            <motion.div
+            <div
               key={faq.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="mb-4"
+              className="bg-white rounded-xl shadow-sm border border-primary-100/20"
             >
               <button
+                className="w-full px-6 py-4 text-left flex justify-between items-center"
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <span className="text-lg font-medium text-gray-900">{faq.question}</span>
-                <span className={`transform transition-transform duration-300 ${openIndex === index ? 'rotate-45' : ''}`}>
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                  </svg>
+                <span className="font-semibold text-neutral-800">{faq.question}</span>
+                <span className={`transform transition-transform ${openIndex === index ? 'rotate-180' : ''}`}>
+                  ▼
                 </span>
               </button>
-              <AnimatePresence>
-                {openIndex === index && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="overflow-hidden"
-                  >
-                    <div className="p-4 bg-white/50 rounded-b-xl">
-                      <p className="text-gray-600">{faq.answer}</p>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
+              {openIndex === index && (
+                <div className="px-6 pb-4 text-neutral-600">
+                  {faq.answer}
+                </div>
+              )}
+            </div>
           ))}
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   )
 } 
