@@ -83,7 +83,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-xl text-neutral-600 leading-relaxed"
+              className="text-xl text-warm-600 leading-relaxed"
             >
               <span className="highlight-text">체계적인 커리큘럼</span>과 <span className="highlight-text">전문 강사진</span>이 
               여러분의 영어 실력 향상을 도와드립니다. <br />
@@ -108,8 +108,8 @@ export default function HeroSection() {
                   whileHover={{ scale: 1.05 }}
                 >
                   <div className="text-2xl mb-2">{feature.icon}</div>
-                  <h3 className="font-semibold text-neutral-800 mb-1">{feature.title}</h3>
-                  <p className="text-sm text-neutral-600">{feature.desc}</p>
+                  <h3 className="font-semibold text-warm-800 mb-1">{feature.title}</h3>
+                  <p className="text-sm text-warm-600">{feature.desc}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -145,7 +145,7 @@ export default function HeroSection() {
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
                   <div className="text-2xl font-bold text-primary mb-1">{stat.number}</div>
-                  <div className="text-sm text-neutral-600">{stat.label}</div>
+                  <div className="text-sm text-warm-600">{stat.label}</div>
                 </div>
               ))}
             </motion.div>
@@ -175,7 +175,7 @@ export default function HeroSection() {
                   <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
-                      <span className="text-sm font-medium text-neutral-800">
+                      <span className="text-sm font-medium text-warm-800">
                         현재 <span className="text-primary font-bold">127명</span>이 학습 중
                       </span>
                     </div>
@@ -190,8 +190,8 @@ export default function HeroSection() {
                 transition={{ duration: 3, repeat: Infinity }}
               >
                 <div className="text-2xl mb-2">🏆</div>
-                <div className="text-sm font-semibold text-neutral-800">최우수 교육원</div>
-                <div className="text-xs text-neutral-600">2024년 수상</div>
+                <div className="text-sm font-semibold text-warm-800">최우수 교육원</div>
+                <div className="text-xs text-warm-600">2024년 수상</div>
               </motion.div>
 
               <motion.div
@@ -200,8 +200,8 @@ export default function HeroSection() {
                 transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
               >
                 <div className="text-2xl mb-2">📈</div>
-                <div className="text-sm font-semibold text-neutral-800">실력 향상</div>
-                <div className="text-xs text-neutral-600">평균 85% 상승</div>
+                <div className="text-sm font-semibold text-warm-800">실력 향상</div>
+                <div className="text-xs text-warm-600">평균 85% 상승</div>
               </motion.div>
             </div>
           </motion.div>
@@ -215,7 +215,7 @@ export default function HeroSection() {
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <div className="flex flex-col items-center space-y-2">
-            <span className="text-sm text-neutral-600">더 많은 정보 보기</span>
+            <span className="text-sm text-warm-600">더 많은 정보 보기</span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ duration: 2, repeat: Infinity }}

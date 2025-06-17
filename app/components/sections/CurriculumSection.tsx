@@ -163,7 +163,7 @@ export default function CurriculumSection() {
           <h2 className="section-title">
             체계적인 <span className="highlight-text">단계별 커리큘럼</span>
           </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-warm-600 max-w-3xl mx-auto leading-relaxed">
             초보자부터 고급자까지, 개인의 수준에 맞는 맞춤형 학습 프로그램으로 <br />
             확실한 영어 실력 향상을 보장합니다.
           </p>
@@ -183,7 +183,7 @@ export default function CurriculumSection() {
               className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                 activeTab === 'levels'
                   ? 'bg-primary text-white shadow-lg'
-                  : 'text-neutral-600 hover:text-primary'
+                  : 'text-warm-600 hover:text-primary'
               }`}
             >
               레벨별 과정
@@ -193,7 +193,7 @@ export default function CurriculumSection() {
               className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                 activeTab === 'paths'
                   ? 'bg-primary text-white shadow-lg'
-                  : 'text-neutral-600 hover:text-primary'
+                  : 'text-warm-600 hover:text-primary'
               }`}
             >
               학습 경로
@@ -219,7 +219,7 @@ export default function CurriculumSection() {
                   className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
                     selectedLevel === index
                       ? 'bg-primary text-white shadow-lg scale-105'
-                      : 'bg-white/80 text-neutral-700 hover:bg-primary/10 border border-primary-100/30'
+                      : 'bg-white/80 text-warm-700 hover:bg-primary/10 border border-primary-100/30'
                   }`}
                 >
                   <span className="flex items-center space-x-2">
@@ -260,7 +260,7 @@ export default function CurriculumSection() {
                   <div className="absolute bottom-6 right-6">
                     <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
                       <div className="text-2xl font-bold text-primary">{curriculumLevels[selectedLevel].price}</div>
-                      <div className="text-sm text-neutral-600">{curriculumLevels[selectedLevel].duration}</div>
+                      <div className="text-sm text-warm-600">{curriculumLevels[selectedLevel].duration}</div>
                     </div>
                   </div>
                 </div>
@@ -269,13 +269,13 @@ export default function CurriculumSection() {
               {/* 오른쪽: 내용 */}
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-4xl font-bold text-neutral-800 mb-2">
+                  <h3 className="text-4xl font-bold text-warm-800 mb-2">
                     {curriculumLevels[selectedLevel].title}
                   </h3>
-                  <p className="text-xl text-neutral-600 mb-4">
+                  <p className="text-xl text-warm-600 mb-4">
                     {curriculumLevels[selectedLevel].subtitle}
                   </p>
-                  <div className="flex items-center space-x-4 text-sm text-neutral-500">
+                  <div className="flex items-center space-x-4 text-sm text-warm-500">
                     <span>⏱️ {curriculumLevels[selectedLevel].duration}</span>
                     <span>💰 {curriculumLevels[selectedLevel].price}</span>
                   </div>
@@ -283,12 +283,12 @@ export default function CurriculumSection() {
 
                 {/* 주요 특징 */}
                 <div>
-                  <h4 className="text-lg font-semibold text-neutral-800 mb-4">📋 주요 학습 내용</h4>
+                  <h4 className="text-lg font-semibold text-warm-800 mb-4">📋 주요 학습 내용</h4>
                   <ul className="space-y-3">
                     {curriculumLevels[selectedLevel].features.map((feature, index) => (
                       <li key={index} className="flex items-start space-x-3">
                         <span className="text-primary font-bold">•</span>
-                        <span className="text-neutral-600">{feature}</span>
+                        <span className="text-warm-600">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -296,7 +296,7 @@ export default function CurriculumSection() {
 
                 {/* 학습 목표 */}
                 <div>
-                  <h4 className="text-lg font-semibold text-neutral-800 mb-4">🎯 학습 목표</h4>
+                  <h4 className="text-lg font-semibold text-warm-800 mb-4">🎯 학습 목표</h4>
                   <div className="flex flex-wrap gap-2">
                     {curriculumLevels[selectedLevel].goals.map((goal, index) => (
                       <span
@@ -344,9 +344,9 @@ export default function CurriculumSection() {
                   <div className={`w-20 h-20 mx-auto mb-6 rounded-3xl bg-gradient-to-br ${path.color} flex items-center justify-center text-4xl text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     {path.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-neutral-800 mb-4">{path.title}</h3>
-                  <p className="text-neutral-600 leading-relaxed mb-6">{path.description}</p>
-                  <div className="flex items-center justify-center space-x-2 text-sm text-neutral-500 mb-6">
+                  <h3 className="text-2xl font-bold text-warm-800 mb-4">{path.title}</h3>
+                  <p className="text-warm-600 leading-relaxed mb-6">{path.description}</p>
+                  <div className="flex items-center justify-center space-x-2 text-sm text-warm-500 mb-6">
                     <span>⏱️</span>
                     <span>{path.duration}</span>
                   </div>
@@ -368,10 +368,10 @@ export default function CurriculumSection() {
           className="text-center mt-20"
         >
           <div className="bg-gradient-to-r from-primary/10 via-accent-coral/10 to-primary/10 rounded-3xl p-12 border border-primary-100/30">
-            <h3 className="text-3xl font-bold text-neutral-800 mb-4">
+            <h3 className="text-3xl font-bold text-warm-800 mb-4">
               지금 바로 시작하세요! 🚀
             </h3>
-            <p className="text-lg text-neutral-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-warm-600 mb-8 max-w-2xl mx-auto">
               무료 레벨 테스트를 통해 현재 실력을 정확히 파악하고, <br />
               개인에게 최적화된 학습 계획을 받아보세요.
             </p>

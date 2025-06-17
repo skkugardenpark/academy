@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-white text-slate-900;
+    @apply bg-white text-warm-900;
     font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -79,7 +79,7 @@
   .input-field {
     @apply w-full px-6 py-4 rounded-2xl border-2 border-primary-100/50
     focus:border-primary focus:ring-4 focus:ring-primary/20
-    placeholder:text-slate-400 bg-white/80 backdrop-blur-sm
+    placeholder:text-warm-400 bg-white/80 backdrop-blur-sm
     transition-all duration-300;
   }
 
@@ -244,7 +244,7 @@ html {
 input, textarea, select {
   @apply rounded-2xl border-2 border-primary-100/50
          focus:border-primary focus:ring-4 focus:ring-primary/20
-         placeholder:text-neutral-400 bg-white/90 backdrop-blur-sm
+         placeholder:text-warm-400 bg-white/90 backdrop-blur-sm
          transition-all duration-300;
 }
 
@@ -263,14 +263,14 @@ input, textarea, select {
 /* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
   body {
-    @apply bg-gradient-to-br from-neutral-900 via-neutral-800 to-primary-900/20 text-neutral-100;
+    @apply bg-gradient-to-br from-warm-900 via-warm-800 to-primary-900/20 text-warm-100;
   }
 
   .modern-card, .feature-card, .testimonial-card {
-    @apply bg-neutral-800/90 border-primary-700/30;
+    @apply bg-warm-800/90 border-primary-700/30;
   }
 
   .glass-effect {
-    @apply bg-neutral-800/90 border-primary-700/30;
+    @apply bg-warm-800/90 border-primary-700/30;
   }
 } 

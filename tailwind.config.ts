@@ -32,27 +32,40 @@ const config: Config = {
           warm: '#FFB4A2'
         },
         neutral: {
-          50: '#F8F9FA',
-          100: '#E9ECEF',
-          200: '#DEE2E6',
-          300: '#CED4DA',
-          400: '#ADB5BD',
-          500: '#6C757D',
-          600: '#495057',
-          700: '#343A40',
-          800: '#212529',
-          900: '#1A1E21'
+          50: '#FEFCFB',
+          100: '#FDF8F6',
+          200: '#F7F0ED',
+          300: '#EDE4DF',
+          400: '#D6C4BA',
+          500: '#B8A394',
+          600: '#9A8171',
+          700: '#7D6555',
+          800: '#5D4A3A',
+          900: '#3E2F23'
         },
         background: {
           light: '#FFFFFF',
-          DEFAULT: '#F8F9FA',
-          dark: '#E9ECEF',
-          warm: '#FFF5F5'
+          DEFAULT: '#FEFCFB',
+          dark: '#FDF8F6',
+          warm: '#FFF5F5',
+          cream: '#FDF8F6'
+        },
+        warm: {
+          50: '#FEFCFB',
+          100: '#FDF8F6',
+          200: '#F7F0ED',
+          300: '#EDE4DF',
+          400: '#D6C4BA',
+          500: '#B8A394',
+          600: '#9A8171',
+          700: '#7D6555',
+          800: '#5D4A3A',
+          900: '#3E2F23'
         },
         mint: '#A8E6CF',
         'mint-light': '#D4F5E9',
-        dark: '#4A5568',
-        'dark-light': '#718096',
+        dark: '#7D6555',
+        'dark-light': '#B8A394',
         gold: {
           DEFAULT: '#D4AF37',
           light: '#F4E9C1',
@@ -80,11 +93,12 @@ const config: Config = {
         '9xl': '96rem',
       },
       boxShadow: {
-        'soft': '0 4px 14px 0 rgba(0, 0, 0, 0.05)',
+        'soft': '0 4px 14px 0 rgba(125, 101, 85, 0.08)',
         'glass': '0 8px 32px 0 rgba(255, 107, 107, 0.15)',
         'glow': '0 0 20px rgba(255, 107, 107, 0.2)',
         'glow-strong': '0 0 30px rgba(255, 107, 107, 0.3)',
-        'inner-glow': 'inset 0 0 20px rgba(255, 107, 107, 0.1)'
+        'inner-glow': 'inset 0 0 20px rgba(255, 107, 107, 0.1)',
+        'warm': '0 4px 14px 0 rgba(125, 101, 85, 0.12)'
       },
       backdropBlur: {
         'glass': '8px',
@@ -140,7 +154,7 @@ const config: Config = {
   ],
   safelist: [
     {
-      pattern: /(bg|text|border)-(primary|accent|neutral)-(light|dark|DEFAULT|50|100|200|300|400|500|600|700|800|900|peach|coral|rose|pink|warm)/,
+      pattern: /(bg|text|border)-(primary|accent|neutral|warm)-(light|dark|DEFAULT|50|100|200|300|400|500|600|700|800|900|peach|coral|rose|pink|warm)/,
       variants: ['hover', 'focus'],
     },
     {

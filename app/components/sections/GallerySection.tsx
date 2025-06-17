@@ -196,7 +196,7 @@ export default function GallerySection() {
             최고의 시설에서 <br />
             <span className="highlight-text">최상의 교육을</span>
           </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-warm-600 max-w-3xl mx-auto leading-relaxed">
             현대적인 시설과 다양한 프로그램을 통해 <br />
             최적의 학습 환경을 제공합니다.
           </p>
@@ -221,7 +221,7 @@ export default function GallerySection() {
             >
               <div className="text-3xl mb-3">{stat.icon}</div>
               <div className="text-2xl font-bold text-primary mb-1">{stat.number}</div>
-              <div className="text-neutral-600 font-medium">{stat.label}</div>
+              <div className="text-warm-600 font-medium">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -241,7 +241,7 @@ export default function GallerySection() {
               className={`flex items-center space-x-2 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
                 activeCategory === category.id
                   ? 'bg-primary text-white shadow-lg scale-105'
-                  : 'bg-white/80 text-neutral-700 hover:bg-primary/10 border border-primary-100/30'
+                  : 'bg-white/80 text-warm-700 hover:bg-primary/10 border border-primary-100/30'
               }`}
             >
               <span>{category.icon}</span>
@@ -302,7 +302,7 @@ export default function GallerySection() {
 
                 {/* 카테고리 배지 */}
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-neutral-700">
+                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-xs font-semibold text-warm-700">
                     {categories.find(cat => cat.id === item.category)?.label}
                   </span>
                 </div>
@@ -320,10 +320,10 @@ export default function GallerySection() {
           className="text-center mt-20"
         >
           <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-12 border border-primary-100/30 shadow-xl">
-            <h3 className="text-3xl font-bold text-neutral-800 mb-4">
+            <h3 className="text-3xl font-bold text-warm-800 mb-4">
               직접 방문해서 확인해보세요! 🏫
             </h3>
-            <p className="text-lg text-neutral-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-warm-600 mb-8 max-w-2xl mx-auto">
               최첨단 시설과 쾌적한 환경에서 진행되는 수업을 <br />
               직접 체험해보시기 바랍니다.
             </p>

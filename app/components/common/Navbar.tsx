@@ -47,7 +47,7 @@ export default function Navbar() {
               <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-accent-coral bg-clip-text text-transparent">
                 ENG Academy
               </h1>
-              <p className="text-xs text-neutral-500 -mt-1">영어 전문 교육원</p>
+              <p className="text-xs text-warm-500 -mt-1">영어 전문 교육원</p>
             </div>
           </Link>
 
@@ -57,7 +57,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="group relative px-4 py-2 rounded-xl text-neutral-700 hover:text-primary transition-all duration-300 hover:bg-white/50"
+                className="group relative px-4 py-2 rounded-xl text-warm-700 hover:text-primary transition-all duration-300 hover:bg-white/50"
               >
                 <span className="flex items-center space-x-2">
                   <span className="text-sm">{item.icon}</span>
@@ -104,7 +104,7 @@ export default function Navbar() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="flex items-center space-x-3 px-6 py-3 text-neutral-700 hover:text-primary hover:bg-primary-50/30 transition-all duration-300 rounded-xl mx-2"
+                className="flex items-center space-x-3 px-6 py-3 text-warm-700 hover:text-primary hover:bg-primary-50/30 transition-all duration-300 rounded-xl mx-2"
               >
                 <span className="text-lg">{item.icon}</span>
                 <span className="font-medium">{item.label}</span>

@@ -93,7 +93,7 @@ export default function AboutSection() {
             혁신적인 영어 교육의 <br />
             <span className="highlight-text">새로운 기준</span>
           </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-warm-600 max-w-3xl mx-auto leading-relaxed">
             15년간 축적된 교육 노하우와 최신 교육 기술을 결합하여 <br />
             학생 개개인의 성공을 위한 최적의 학습 환경을 제공합니다.
           </p>
@@ -125,8 +125,8 @@ export default function AboutSection() {
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
                     <div className="flex items-center justify-between">
                       <div>
-                        <h4 className="font-bold text-neutral-800">현재 진행 중인 수업</h4>
-                        <p className="text-sm text-neutral-600">Advanced Speaking Class</p>
+                        <h4 className="font-bold text-warm-800">현재 진행 중인 수업</h4>
+                        <p className="text-sm text-warm-600">Advanced Speaking Class</p>
                       </div>
                       <div className="text-2xl">🎓</div>
                     </div>
@@ -143,7 +143,7 @@ export default function AboutSection() {
                 <div className="text-center">
                   <div className="text-3xl mb-2">🏆</div>
                   <div className="text-2xl font-bold text-primary">98%</div>
-                  <div className="text-sm text-neutral-600">학생 만족도</div>
+                  <div className="text-sm text-warm-600">학생 만족도</div>
                 </div>
               </motion.div>
 
@@ -155,7 +155,7 @@ export default function AboutSection() {
                 <div className="text-center">
                   <div className="text-3xl mb-2">📈</div>
                   <div className="text-2xl font-bold text-primary">85%</div>
-                  <div className="text-sm text-neutral-600">성적 향상률</div>
+                  <div className="text-sm text-warm-600">성적 향상률</div>
                 </div>
               </motion.div>
             </div>
@@ -170,10 +170,10 @@ export default function AboutSection() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-3xl font-bold text-neutral-800 mb-4">
+              <h3 className="text-3xl font-bold text-warm-800 mb-4">
                 왜 <span className="highlight-text">ENG Academy</span>를 선택해야 할까요?
               </h3>
-              <p className="text-lg text-neutral-600 leading-relaxed">
+              <p className="text-lg text-warm-600 leading-relaxed">
                 단순한 영어 학습을 넘어서, 글로벌 시대에 필요한 실질적인 커뮤니케이션 능력을 
                 키우는 것이 저희의 목표입니다. 체계적인 시스템과 개인별 관리를 통해 
                 확실한 결과를 보장합니다.
@@ -202,12 +202,12 @@ export default function AboutSection() {
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="text-xl font-bold text-neutral-800">{feature.title}</h4>
+                        <h4 className="text-xl font-bold text-warm-800">{feature.title}</h4>
                         <span className="text-sm font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">
                           {feature.stats}
                         </span>
                       </div>
-                      <p className="text-neutral-600 leading-relaxed">{feature.description}</p>
+                      <p className="text-warm-600 leading-relaxed">{feature.description}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -224,7 +224,7 @@ export default function AboutSection() {
           transition={{ duration: 0.8 }}
           className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary-100/30 mb-20"
         >
-          <h3 className="text-2xl font-bold text-center text-neutral-800 mb-8">
+          <h3 className="text-2xl font-bold text-center text-warm-800 mb-8">
             <span className="highlight-text">검증된 성과</span>로 증명하는 교육의 질
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -239,7 +239,7 @@ export default function AboutSection() {
               >
                 <div className="text-4xl mb-3">{achievement.icon}</div>
                 <div className="text-3xl font-bold text-primary mb-2">{achievement.number}</div>
-                <div className="text-neutral-600 font-medium">{achievement.label}</div>
+                <div className="text-warm-600 font-medium">{achievement.label}</div>
               </motion.div>
             ))}
           </div>
@@ -253,7 +253,7 @@ export default function AboutSection() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h3 className="text-2xl font-bold text-neutral-800 mb-8">
+          <h3 className="text-2xl font-bold text-warm-800 mb-8">
             학생들의 <span className="highlight-text">생생한 후기</span>
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -271,11 +271,11 @@ export default function AboutSection() {
                     {testimonial.name[0]}
                   </div>
                   <div>
-                    <h4 className="font-semibold text-neutral-800">{testimonial.name}</h4>
-                    <p className="text-sm text-neutral-600">{testimonial.role}</p>
+                    <h4 className="font-semibold text-warm-800">{testimonial.name}</h4>
+                    <p className="text-sm text-warm-600">{testimonial.role}</p>
                   </div>
                 </div>
-                <p className="text-neutral-700 leading-relaxed mb-4">&ldquo;{testimonial.content}&rdquo;</p>
+                <p className="text-warm-700 leading-relaxed mb-4">&ldquo;{testimonial.content}&rdquo;</p>
                 <div className="flex items-center">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <span key={i} className="text-yellow-400 text-lg">⭐</span>

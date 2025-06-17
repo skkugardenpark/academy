@@ -172,7 +172,7 @@ export default function TestimonialsSection() {
             수강생들의 <br />
             <span className="highlight-text">생생한 성공 스토리</span>
           </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-warm-600 max-w-3xl mx-auto leading-relaxed">
             실제 수강생들이 들려주는 변화와 성장의 이야기를 <br />
             확인해보세요.
           </p>
@@ -197,7 +197,7 @@ export default function TestimonialsSection() {
             >
               <div className="text-3xl mb-3">{stat.icon}</div>
               <div className="text-2xl font-bold text-primary mb-1">{stat.number}</div>
-              <div className="text-neutral-600 font-medium">{stat.label}</div>
+              <div className="text-warm-600 font-medium">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>
@@ -220,7 +220,7 @@ export default function TestimonialsSection() {
               className={`flex items-center space-x-2 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
                 activeCategory === category.id
                   ? 'bg-primary text-white shadow-lg scale-105'
-                  : 'bg-white/80 text-neutral-700 hover:bg-primary/10 border border-primary-100/30'
+                  : 'bg-white/80 text-warm-700 hover:bg-primary/10 border border-primary-100/30'
               }`}
             >
               <span>{category.icon}</span>
@@ -265,18 +265,18 @@ export default function TestimonialsSection() {
                     ))}
                   </div>
 
-                  <blockquote className="text-xl md:text-2xl text-neutral-700 leading-relaxed mb-6 italic">
+                  <blockquote className="text-xl md:text-2xl text-warm-700 leading-relaxed mb-6 italic">
                     &ldquo;{filteredTestimonials[currentTestimonial].content}&rdquo;
                   </blockquote>
 
                   <div className="space-y-2">
-                    <h3 className="text-2xl font-bold text-neutral-800">
+                    <h3 className="text-2xl font-bold text-warm-800">
                       {filteredTestimonials[currentTestimonial].name}
                     </h3>
                     <p className="text-lg text-primary font-semibold">
                       {filteredTestimonials[currentTestimonial].role}
                     </p>
-                    <p className="text-neutral-600">
+                    <p className="text-warm-600">
                       {filteredTestimonials[currentTestimonial].company}
                     </p>
                   </div>
@@ -289,7 +289,7 @@ export default function TestimonialsSection() {
                     <span className="px-4 py-2 bg-accent-coral/10 text-accent-coral rounded-full text-sm font-semibold">
                       🏆 {filteredTestimonials[currentTestimonial].achievement}
                     </span>
-                    <span className="px-4 py-2 bg-accent-warm/10 text-neutral-700 rounded-full text-sm font-semibold">
+                    <span className="px-4 py-2 bg-accent-warm/10 text-warm-700 rounded-full text-sm font-semibold">
                       ⏰ {filteredTestimonials[currentTestimonial].duration}
                     </span>
                   </div>
@@ -345,8 +345,8 @@ export default function TestimonialsSection() {
                     />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-neutral-800">{testimonial.name}</h4>
-                    <p className="text-sm text-neutral-600">{testimonial.role}</p>
+                    <h4 className="font-semibold text-warm-800">{testimonial.name}</h4>
+                    <p className="text-sm text-warm-600">{testimonial.role}</p>
                   </div>
                   <div className="ml-auto">
                     <div className="flex space-x-1">
@@ -357,7 +357,7 @@ export default function TestimonialsSection() {
                   </div>
                 </div>
                 
-                <p className="text-neutral-700 text-sm leading-relaxed mb-4 line-clamp-3">
+                <p className="text-warm-700 text-sm leading-relaxed mb-4 line-clamp-3">
                   &ldquo;{testimonial.content}&rdquo;
                 </p>
 
@@ -379,10 +379,10 @@ export default function TestimonialsSection() {
           className="text-center"
         >
           <div className="bg-gradient-to-r from-primary/10 via-accent-coral/10 to-primary/10 rounded-3xl p-12 border border-primary-100/30">
-            <h3 className="text-3xl font-bold text-neutral-800 mb-4">
+            <h3 className="text-3xl font-bold text-warm-800 mb-4">
               다음 성공 스토리의 주인공이 되어보세요! 🌟
             </h3>
-            <p className="text-lg text-neutral-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-warm-600 mb-8 max-w-2xl mx-auto">
               지금까지 1,200명 이상의 수강생들이 목표를 달성했습니다. <br />
               여러분도 함께하세요!
             </p>

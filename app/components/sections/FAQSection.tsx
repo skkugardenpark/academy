@@ -25,7 +25,7 @@ export default function FAQSection() {
   ]
 
   return (
-    <AnimatedSection id="faq" className="section-padding bg-neutral-50">
+    <AnimatedSection id="faq" className="section-padding bg-warm-50">
       <div className="container">
         <SectionTitle
           title="자주 묻는 질문"
@@ -42,13 +42,13 @@ export default function FAQSection() {
                 className="w-full px-6 py-4 text-left flex justify-between items-center"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
-                <span className="font-semibold text-neutral-800">{faq.question}</span>
+                <span className="font-semibold text-warm-800">{faq.question}</span>
                 <span className={`transform transition-transform ${openIndex === index ? 'rotate-180' : ''}`}>
                   ▼
                 </span>
               </button>
               {openIndex === index && (
-                <div className="px-6 pb-4 text-neutral-600">
+                <div className="px-6 pb-4 text-warm-600">
                   {faq.answer}
                 </div>
               )}

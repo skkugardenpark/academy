@@ -221,7 +221,7 @@ export default function InstructorsSection() {
             세계 최고 수준의 <br />
             <span className="highlight-text">전문 강사진</span>
           </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-warm-600 max-w-3xl mx-auto leading-relaxed">
             글로벌 명문대학 출신의 검증된 전문가들이 <br />
             개인별 맞춤 교육으로 여러분의 성공을 책임집니다.
           </p>
@@ -245,8 +245,8 @@ export default function InstructorsSection() {
               className="text-center p-6 bg-white/50 backdrop-blur-sm rounded-2xl border border-primary-100/30 hover:shadow-lg transition-all duration-300"
             >
               <div className="text-4xl mb-4">{method.icon}</div>
-              <h3 className="text-lg font-bold text-neutral-800 mb-2">{method.title}</h3>
-              <p className="text-sm text-neutral-600">{method.description}</p>
+              <h3 className="text-lg font-bold text-warm-800 mb-2">{method.title}</h3>
+              <p className="text-sm text-warm-600">{method.description}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -266,7 +266,7 @@ export default function InstructorsSection() {
               className={`flex items-center space-x-3 px-6 py-3 rounded-2xl font-semibold transition-all duration-300 ${
                 selectedInstructor === index
                   ? 'bg-primary text-white shadow-lg scale-105'
-                  : 'bg-white/80 text-neutral-700 hover:bg-primary/10 border border-primary-100/30'
+                  : 'bg-white/80 text-warm-700 hover:bg-primary/10 border border-primary-100/30'
               }`}
             >
               <div className="w-8 h-8 rounded-full overflow-hidden">
@@ -304,13 +304,13 @@ export default function InstructorsSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               </div>
               
-              <h3 className="text-2xl font-bold text-neutral-800 mb-2">
+              <h3 className="text-2xl font-bold text-warm-800 mb-2">
                 {instructors[selectedInstructor].name}
               </h3>
               <p className="text-lg text-primary font-semibold mb-2">
                 {instructors[selectedInstructor].role}
               </p>
-              <p className="text-neutral-600 mb-4">
+              <p className="text-warm-600 mb-4">
                 {instructors[selectedInstructor].nationality} • {instructors[selectedInstructor].experience} 경력
               </p>
               
@@ -321,25 +321,25 @@ export default function InstructorsSection() {
                     <span className="text-yellow-400">⭐</span>
                     <span className="font-bold text-lg">{instructors[selectedInstructor].rating}</span>
                   </div>
-                  <span className="text-sm text-neutral-600">평점</span>
+                  <span className="text-sm text-warm-600">평점</span>
                 </div>
                 <div className="text-center">
                   <div className="font-bold text-lg text-primary mb-1">
                     {instructors[selectedInstructor].students}+
                   </div>
-                  <span className="text-sm text-neutral-600">수강생</span>
+                  <span className="text-sm text-warm-600">수강생</span>
                 </div>
               </div>
 
               {/* 학력 */}
               <div className="bg-primary/10 rounded-2xl p-4 mb-6">
-                <h4 className="font-semibold text-neutral-800 mb-2">🎓 학력</h4>
-                <p className="text-sm text-neutral-700">{instructors[selectedInstructor].education}</p>
+                <h4 className="font-semibold text-warm-800 mb-2">🎓 학력</h4>
+                <p className="text-sm text-warm-700">{instructors[selectedInstructor].education}</p>
               </div>
 
               {/* 자격증 */}
               <div>
-                <h4 className="font-semibold text-neutral-800 mb-3">📜 자격증</h4>
+                <h4 className="font-semibold text-warm-800 mb-3">📜 자격증</h4>
                 <div className="flex flex-wrap gap-2">
                   {instructors[selectedInstructor].certifications.map((cert, index) => (
                     <span
@@ -369,7 +369,7 @@ export default function InstructorsSection() {
                   className={`flex items-center space-x-2 px-4 py-2 rounded-xl font-medium transition-all duration-300 ${
                     activeTab === tab.id
                       ? 'bg-primary text-white'
-                      : 'bg-white/80 text-neutral-600 hover:bg-primary/10'
+                      : 'bg-white/80 text-warm-600 hover:bg-primary/10'
                   }`}
                 >
                   <span>{tab.icon}</span>
@@ -386,17 +386,17 @@ export default function InstructorsSection() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <h4 className="text-xl font-bold text-neutral-800 mb-4">소개</h4>
-                  <p className="text-neutral-700 leading-relaxed mb-6">
+                  <h4 className="text-xl font-bold text-warm-800 mb-4">소개</h4>
+                  <p className="text-warm-700 leading-relaxed mb-6">
                     {instructors[selectedInstructor].description}
                   </p>
                   
-                  <h4 className="text-xl font-bold text-neutral-800 mb-4">교육 철학</h4>
-                  <blockquote className="border-l-4 border-primary pl-4 italic text-neutral-700 leading-relaxed mb-6">
+                  <h4 className="text-xl font-bold text-warm-800 mb-4">교육 철학</h4>
+                  <blockquote className="border-l-4 border-primary pl-4 italic text-warm-700 leading-relaxed mb-6">
                     &ldquo;{instructors[selectedInstructor].philosophy}&rdquo;
                   </blockquote>
 
-                  <h4 className="text-xl font-bold text-neutral-800 mb-4">담당 과목</h4>
+                  <h4 className="text-xl font-bold text-warm-800 mb-4">담당 과목</h4>
                   <div className="grid grid-cols-2 gap-3">
                     {instructors[selectedInstructor].subjects.map((subject, index) => (
                       <div
@@ -404,7 +404,7 @@ export default function InstructorsSection() {
                         className="flex items-center space-x-2 p-3 bg-primary/5 rounded-xl"
                       >
                         <span className="text-primary">📚</span>
-                        <span className="text-neutral-700 font-medium">{subject}</span>
+                        <span className="text-warm-700 font-medium">{subject}</span>
                       </div>
                     ))}
                   </div>
@@ -417,7 +417,7 @@ export default function InstructorsSection() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <h4 className="text-xl font-bold text-neutral-800 mb-6">전문 분야</h4>
+                  <h4 className="text-xl font-bold text-warm-800 mb-6">전문 분야</h4>
                   <div className="space-y-4">
                     {instructors[selectedInstructor].specialties.map((specialty, index) => (
                       <div
@@ -426,7 +426,7 @@ export default function InstructorsSection() {
                       >
                         <span className="text-primary text-xl">✨</span>
                         <div>
-                          <h5 className="font-semibold text-neutral-800">{specialty}</h5>
+                          <h5 className="font-semibold text-warm-800">{specialty}</h5>
                         </div>
                       </div>
                     ))}
@@ -440,7 +440,7 @@ export default function InstructorsSection() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                 >
-                  <h4 className="text-xl font-bold text-neutral-800 mb-6">주요 성과</h4>
+                  <h4 className="text-xl font-bold text-warm-800 mb-6">주요 성과</h4>
                   <div className="space-y-4">
                     {instructors[selectedInstructor].achievements.map((achievement, index) => (
                       <div
@@ -449,7 +449,7 @@ export default function InstructorsSection() {
                       >
                         <span className="text-accent-coral text-xl">🏆</span>
                         <div>
-                          <p className="text-neutral-700 font-medium">{achievement}</p>
+                          <p className="text-warm-700 font-medium">{achievement}</p>
                         </div>
                       </div>
                     ))}
@@ -469,10 +469,10 @@ export default function InstructorsSection() {
           className="text-center"
         >
           <div className="bg-gradient-to-r from-primary/10 via-accent-coral/10 to-primary/10 rounded-3xl p-12 border border-primary-100/30">
-            <h3 className="text-3xl font-bold text-neutral-800 mb-4">
+            <h3 className="text-3xl font-bold text-warm-800 mb-4">
               최고의 강사진과 함께 시작하세요! 🌟
             </h3>
-            <p className="text-lg text-neutral-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-warm-600 mb-8 max-w-2xl mx-auto">
               세계 최고 수준의 전문가들이 여러분의 영어 실력 향상을 위해 <br />
               개인별 맞춤 교육을 제공합니다.
             </p>

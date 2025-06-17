@@ -143,7 +143,7 @@ export default function ContactSection() {
             영어 여행의 <br />
             <span className="highlight-text">첫걸음을 함께해요</span>
           </h2>
-          <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-warm-600 max-w-3xl mx-auto leading-relaxed">
             무료 상담부터 레벨테스트, 체험수업까지! <br />
             여러분의 영어 실력 향상을 위한 완벽한 솔루션을 제공합니다.
           </p>
@@ -167,8 +167,8 @@ export default function ContactSection() {
               className="text-center p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-primary-100/30 shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <div className="text-4xl mb-3">{benefit.icon}</div>
-              <h3 className="font-bold text-neutral-800 mb-2">{benefit.title}</h3>
-              <p className="text-sm text-neutral-600">{benefit.description}</p>
+              <h3 className="font-bold text-warm-800 mb-2">{benefit.title}</h3>
+              <p className="text-sm text-warm-600">{benefit.description}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -183,9 +183,9 @@ export default function ContactSection() {
               transition={{ duration: 0.8 }}
               className="lg:col-span-2 space-y-6"
             >
-              <h3 className="text-2xl font-bold text-neutral-800 mb-6">
-                💫 다양한 상담 방법
-              </h3>
+                          <h3 className="text-2xl font-bold text-warm-800 mb-6">
+              💫 다양한 상담 방법
+            </h3>
               
               {contactMethods.map((method, index) => (
                 <motion.div
@@ -195,7 +195,7 @@ export default function ContactSection() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 * index }}
                   className={`feature-card cursor-pointer transition-all duration-300 ${
-                    selectedMethod === index ? 'ring-2 ring-primary shadow-xl scale-105' : ''
+                    selectedMethod === index ? 'ring-2 ring-primary shadow-xl scale-105 bg-primary/5' : ''
                   }`}
                   onClick={() => setSelectedMethod(index)}
                 >
@@ -204,10 +204,10 @@ export default function ContactSection() {
                       {method.icon}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-neutral-800 mb-1">{method.title}</h4>
-                      <p className="text-neutral-600 text-sm mb-2">{method.description}</p>
+                      <h4 className="font-bold text-warm-800 mb-1">{method.title}</h4>
+                      <p className="text-warm-600 text-sm mb-2">{method.description}</p>
                       <p className="font-semibold text-primary">{method.value}</p>
-                      <p className="text-xs text-neutral-500 mt-1">{method.available}</p>
+                      <p className="text-xs text-warm-500 mt-1">{method.available}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -221,21 +221,21 @@ export default function ContactSection() {
                 transition={{ duration: 0.8 }}
                 className="feature-card"
               >
-                <h4 className="font-bold text-neutral-800 mb-4 flex items-center">
+                <h4 className="font-bold text-warm-800 mb-4 flex items-center">
                   <span className="text-2xl mr-3">📍</span>
                   오시는 길
                 </h4>
                 <div className="space-y-3">
-                  <div className="text-neutral-700">
+                  <div className="text-warm-700">
                     <strong>주소:</strong> 서울특별시 강남구 테헤란로 123 퓨처빌딩 8층
                   </div>
-                  <div className="text-neutral-700">
+                  <div className="text-warm-700">
                     <strong>지하철:</strong> 2호선 강남역 3번 출구 도보 5분
                   </div>
-                  <div className="text-neutral-700">
+                  <div className="text-warm-700">
                     <strong>버스:</strong> 146, 472, 643 강남역 정류장
                   </div>
-                  <div className="text-neutral-700">
+                  <div className="text-warm-700">
                     <strong>주차:</strong> 건물 지하 주차장 이용 (2시간 무료)
                   </div>
                 </div>
@@ -255,7 +255,7 @@ export default function ContactSection() {
             >
               <div className="feature-card">
                 <div className="flex items-center justify-between mb-8">
-                  <h3 className="text-2xl font-bold text-neutral-800">
+                  <h3 className="text-2xl font-bold text-warm-800">
                     🎯 무료 상담 신청
                   </h3>
                   <div className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-semibold">
@@ -267,7 +267,7 @@ export default function ContactSection() {
                   {/* 기본 정보 */}
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-semibold text-neutral-700 mb-2">
+                      <label className="block text-sm font-semibold text-warm-700 mb-2">
                         이름 *
                       </label>
                       <input
@@ -282,7 +282,7 @@ export default function ContactSection() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-semibold text-neutral-700 mb-2">
+                      <label className="block text-sm font-semibold text-warm-700 mb-2">
                         연락처 *
                       </label>
                       <input
@@ -304,7 +304,7 @@ export default function ContactSection() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-semibold text-neutral-700 mb-2">
+                    <label className="block text-sm font-semibold text-warm-700 mb-2">
                       이메일 *
                     </label>
                     <input
@@ -326,7 +326,7 @@ export default function ContactSection() {
 
                   {/* 영어 수준 */}
                   <div>
-                    <label className="block text-sm font-semibold text-neutral-700 mb-4">
+                    <label className="block text-sm font-semibold text-warm-700 mb-4">
                       현재 영어 수준 *
                     </label>
                     <div className="grid md:grid-cols-2 gap-3">
@@ -343,8 +343,8 @@ export default function ContactSection() {
                               ? 'border-primary bg-primary/10 shadow-lg'
                               : 'border-neutral-200 hover:border-primary/50 hover:bg-primary/5'
                           }`}>
-                            <div className="font-semibold text-neutral-800">{level.label}</div>
-                            <div className="text-sm text-neutral-600 mt-1">{level.description}</div>
+                            <div className="font-semibold text-warm-800">{level.label}</div>
+                            <div className="text-sm text-warm-600 mt-1">{level.description}</div>
                           </div>
                         </label>
                       ))}
@@ -356,7 +356,7 @@ export default function ContactSection() {
 
                   {/* 관심 과정 */}
                   <div>
-                    <label className="block text-sm font-semibold text-neutral-700 mb-4">
+                    <label className="block text-sm font-semibold text-warm-700 mb-4">
                       관심 있는 과정 *
                     </label>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -374,7 +374,7 @@ export default function ContactSection() {
                               : 'border-neutral-200 hover:border-primary/50 hover:bg-primary/5'
                           }`}>
                             <div className="text-2xl mb-1">{course.icon}</div>
-                            <div className="text-sm font-semibold text-neutral-800">{course.label}</div>
+                            <div className="text-sm font-semibold text-warm-800">{course.label}</div>
                           </div>
                         </label>
                       ))}
@@ -386,7 +386,7 @@ export default function ContactSection() {
 
                   {/* 희망 시간대 */}
                   <div>
-                    <label className="block text-sm font-semibold text-neutral-700 mb-4">
+                    <label className="block text-sm font-semibold text-warm-700 mb-4">
                       희망 수업 시간대
                     </label>
                     <div className="grid md:grid-cols-2 gap-3">
@@ -405,7 +405,7 @@ export default function ContactSection() {
                           }`}>
                             <div className="flex items-center space-x-3">
                               <span className="text-xl">{slot.icon}</span>
-                              <span className="font-semibold text-neutral-800">{slot.label}</span>
+                              <span className="font-semibold text-warm-800">{slot.label}</span>
                             </div>
                           </div>
                         </label>
@@ -415,7 +415,7 @@ export default function ContactSection() {
 
                   {/* 추가 문의사항 */}
                   <div>
-                    <label className="block text-sm font-semibold text-neutral-700 mb-2">
+                    <label className="block text-sm font-semibold text-warm-700 mb-2">
                       추가 문의사항
                     </label>
                     <textarea
@@ -464,7 +464,7 @@ export default function ContactSection() {
                   )}
 
                   {/* 개인정보 동의 */}
-                  <div className="text-xs text-neutral-500 bg-neutral-50 p-4 rounded-xl">
+                  <div className="text-xs text-warm-500 bg-warm-50 p-4 rounded-xl">
                     <p className="mb-2">
                       📋 <strong>개인정보 수집 및 이용 동의</strong>
                     </p>
@@ -488,10 +488,10 @@ export default function ContactSection() {
           className="text-center mt-20"
         >
           <div className="bg-gradient-to-r from-primary/10 via-accent-coral/10 to-primary/10 rounded-3xl p-12 border border-primary-100/30">
-            <h3 className="text-3xl font-bold text-neutral-800 mb-4">
+            <h3 className="text-3xl font-bold text-warm-800 mb-4">
               지금 바로 시작하세요! 🚀
             </h3>
-            <p className="text-lg text-neutral-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-warm-600 mb-8 max-w-2xl mx-auto">
               망설이지 마세요! 매일 수많은 학생들이 우리와 함께 <br />
               영어 실력을 향상시키고 있습니다.
             </p>
