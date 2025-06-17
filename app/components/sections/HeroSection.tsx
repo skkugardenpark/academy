@@ -27,7 +27,7 @@ export default function HeroSection() {
       setCurrentSlide((prev) => (prev + 1) % features.length)
     }, 3000)
     return () => clearInterval(timer)
-  }, [])
+  }, [features.length])
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">

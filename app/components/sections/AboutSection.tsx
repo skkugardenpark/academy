@@ -275,7 +275,7 @@ export default function AboutSection() {
                     <p className="text-sm text-neutral-600">{testimonial.role}</p>
                   </div>
                 </div>
-                <p className="text-neutral-700 leading-relaxed mb-4">"{testimonial.content}"</p>
+                <p className="text-neutral-700 leading-relaxed mb-4">&ldquo;{testimonial.content}&rdquo;</p>
                 <div className="flex items-center">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <span key={i} className="text-yellow-400 text-lg">⭐</span>

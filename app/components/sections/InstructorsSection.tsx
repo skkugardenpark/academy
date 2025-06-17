@@ -393,7 +393,7 @@ export default function InstructorsSection() {
                   
                   <h4 className="text-xl font-bold text-neutral-800 mb-4">교육 철학</h4>
                   <blockquote className="border-l-4 border-primary pl-4 italic text-neutral-700 leading-relaxed mb-6">
-                    "{instructors[selectedInstructor].philosophy}"
+                    &ldquo;{instructors[selectedInstructor].philosophy}&rdquo;
                   </blockquote>
 
                   <h4 className="text-xl font-bold text-neutral-800 mb-4">담당 과목</h4>

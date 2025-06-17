@@ -266,7 +266,7 @@ export default function TestimonialsSection() {
                   </div>
 
                   <blockquote className="text-xl md:text-2xl text-neutral-700 leading-relaxed mb-6 italic">
-                    "{filteredTestimonials[currentTestimonial].content}"
+                    &ldquo;{filteredTestimonials[currentTestimonial].content}&rdquo;
                   </blockquote>
 
                   <div className="space-y-2">
@@ -358,7 +358,7 @@ export default function TestimonialsSection() {
                 </div>
                 
                 <p className="text-neutral-700 text-sm leading-relaxed mb-4 line-clamp-3">
-                  "{testimonial.content}"
+                  &ldquo;{testimonial.content}&rdquo;
                 </p>
 
                 <div className="flex flex-wrap gap-2">
