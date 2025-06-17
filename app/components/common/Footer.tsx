@@ -32,13 +32,6 @@ const footerLinks = [
   },
 ]
 
-const socialLinks = [
-  { name: 'Instagram', href: '#', icon: '/icons/instagram.svg' },
-  { name: 'Facebook', href: '#', icon: '/icons/facebook.svg' },
-  { name: 'YouTube', href: '#', icon: '/icons/youtube.svg' },
-  { name: 'Blog', href: '#', icon: '/icons/blog.svg' },
-]
-
 export default function Footer() {
   return (
     <footer className="bg-neutral-800 text-neutral-100">
@@ -46,35 +39,27 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Logo and Description */}
           <div className="space-y-6">
-            <Image
-              src="/images/logo.png"
-              alt="Engage Academy"
-              width={150}
-              height={40}
-              className="h-10 w-auto"
-            />
+            <div className="text-2xl font-bold text-primary-light">
+              Engage Academy
+            </div>
             <p className="text-neutral-400 text-sm leading-relaxed">
               최고의 강사진과 체계적인 커리큘럼으로 
               여러분의 영어 실력 향상을 돕습니다.
               글로벌 인재로 성장하는 첫걸음을 
               저희와 함께 시작하세요.
             </p>
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <Link
-                  key={social.name}
-                  href={social.href}
-                  className="text-neutral-400 hover:text-primary-light transition-colors duration-300"
-                >
-                  <Image
-                    src={social.icon}
-                    alt={social.name}
-                    width={24}
-                    height={24}
-                    className="w-6 h-6"
-                  />
-                </Link>
-              ))}
+            <div className="flex items-center space-x-4 text-sm text-neutral-400">
+              <Link href="#" className="hover:text-primary-light transition-colors duration-300">
+                Instagram
+              </Link>
+              <span>•</span>
+              <Link href="#" className="hover:text-primary-light transition-colors duration-300">
+                Facebook
+              </Link>
+              <span>•</span>
+              <Link href="#" className="hover:text-primary-light transition-colors duration-300">
+                Blog
+              </Link>
             </div>
           </div>
 
