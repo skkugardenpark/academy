@@ -9,8 +9,39 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primary: '#FF8C8C',
-        secondary: '#FFB6B6',
+        primary: {
+          DEFAULT: '#FF6B6B',
+          light: '#FFE2E2',
+          dark: '#FF4444'
+        },
+        secondary: {
+          DEFAULT: '#F8F9FA',
+          light: '#FFFFFF',
+          dark: '#E9ECEF'
+        },
+        accent: {
+          red: '#FF8787',
+          pink: '#FFA5A5',
+          coral: '#FFB8B8',
+          peach: '#FFD8D8'
+        },
+        neutral: {
+          50: '#F8F9FA',
+          100: '#E9ECEF',
+          200: '#DEE2E6',
+          300: '#CED4DA',
+          400: '#ADB5BD',
+          500: '#6C757D',
+          600: '#495057',
+          700: '#343A40',
+          800: '#212529',
+          900: '#1A1E21'
+        },
+        background: {
+          light: '#FFFFFF',
+          DEFAULT: '#F8F9FA',
+          dark: '#E9ECEF'
+        },
         mint: '#A8E6CF',
         'mint-light': '#D4F5E9',
         dark: '#4A5568',
@@ -19,12 +50,6 @@ const config: Config = {
           DEFAULT: '#D4AF37',
           light: '#F4E9C1',
           dark: '#B69329',
-        },
-        accent: {
-          yellow: '#FFD93D',
-          purple: '#6C63FF',
-          pink: '#FF6B6B',
-          green: '#4CAF50'
         },
         navy: '#1E3A8A',
       },
@@ -48,12 +73,12 @@ const config: Config = {
         '9xl': '96rem',
       },
       boxShadow: {
-        'gold': '0 4px 14px 0 rgba(212, 175, 55, 0.25)',
+        'soft': '0 4px 14px 0 rgba(0, 0, 0, 0.05)',
         'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.15)',
         'shadow-glass': '0 8px 32px 0 rgba(31, 38, 135, 0.15)',
-        'glow': '0 0 20px rgba(0, 163, 255, 0.3)',
-        'glow-strong': '0 0 30px rgba(0, 163, 255, 0.5)',
-        'inner-glow': 'inset 0 0 20px rgba(0, 163, 255, 0.2)'
+        'glow': '0 0 20px rgba(255, 107, 107, 0.2)',
+        'glow-strong': '0 0 30px rgba(255, 107, 107, 0.3)',
+        'inner-glow': 'inset 0 0 20px rgba(255, 107, 107, 0.1)'
       },
       backdropBlur: {
         'glass': '8px',
@@ -62,7 +87,7 @@ const config: Config = {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',
         'float': 'float 6s ease-in-out infinite',
-        'pulse-gold': 'pulseGold 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'pulse-soft': 'pulseSoft 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'gradient': 'gradient 8s ease infinite',
         'shimmer': 'shimmer 2s linear infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite'
@@ -80,9 +105,9 @@ const config: Config = {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-20px)' },
         },
-        pulseGold: {
+        pulseSoft: {
           '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '.5' },
+          '50%': { opacity: '.7' },
         },
         gradient: {
           '0%': { backgroundPosition: '0% 50%' },
@@ -109,7 +134,7 @@ const config: Config = {
   ],
   safelist: [
     {
-      pattern: /(bg|text|border)-(primary|mint|gold|accent)-(light|dark|blue|purple|teal)/,
+      pattern: /(bg|text|border)-(primary|secondary|accent|neutral)-(light|dark|DEFAULT|50|100|200|300|400|500|600|700|800|900)/,
       variants: ['hover', 'focus'],
     },
   ],

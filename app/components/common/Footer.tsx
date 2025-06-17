@@ -41,7 +41,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-dark-light text-gray-100">
+    <footer className="bg-neutral-800 text-neutral-100">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Logo and Description */}
@@ -53,7 +53,7 @@ export default function Footer() {
               height={40}
               className="h-10 w-auto"
             />
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p className="text-neutral-400 text-sm leading-relaxed">
               최고의 강사진과 체계적인 커리큘럼으로 
               여러분의 영어 실력 향상을 돕습니다.
               글로벌 인재로 성장하는 첫걸음을 
@@ -64,7 +64,7 @@ export default function Footer() {
                 <Link
                   key={social.name}
                   href={social.href}
-                  className="text-gray-400 hover:text-primary transition-colors duration-300"
+                  className="text-neutral-400 hover:text-primary-light transition-colors duration-300"
                 >
                   <Image
                     src={social.icon}
@@ -81,13 +81,13 @@ export default function Footer() {
           {/* Links */}
           {footerLinks.map((section) => (
             <div key={section.title}>
-              <h3 className="text-lg font-semibold mb-6 text-primary">{section.title}</h3>
+              <h3 className="text-lg font-semibold mb-6 text-primary-light">{section.title}</h3>
               <ul className="space-y-4">
                 {section.links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-primary transition-colors duration-300 text-sm"
+                      className="text-neutral-400 hover:text-primary-light transition-colors duration-300 text-sm"
                     >
                       {link.label}
                     </Link>
@@ -99,21 +99,21 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-gray-800">
+        <div className="mt-16 pt-8 border-t border-neutral-700">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-gray-400">
+            <div className="text-sm text-neutral-400">
               © 2024 Engage Academy. All rights reserved.
             </div>
             <div className="flex space-x-6">
               <Link
                 href="/privacy"
-                className="text-sm text-gray-400 hover:text-primary transition-colors duration-300"
+                className="text-sm text-neutral-400 hover:text-primary-light transition-colors duration-300"
               >
                 개인정보처리방침
               </Link>
               <Link
                 href="/terms"
-                className="text-sm text-gray-400 hover:text-primary transition-colors duration-300"
+                className="text-sm text-neutral-400 hover:text-primary-light transition-colors duration-300"
               >
                 이용약관
               </Link>
