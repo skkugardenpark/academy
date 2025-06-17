@@ -8,7 +8,7 @@
     font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    @apply bg-gradient-to-br from-primary-100 via-white to-accent-warm/20;
+    @apply bg-gradient-to-br from-background-sakura via-white to-accent-sakura/30;
   }
 }
 
@@ -40,7 +40,7 @@
     @apply inline-flex items-center px-8 py-4 rounded-full font-semibold text-white
     bg-gradient-to-r from-primary via-accent-coral to-primary-600
     hover:from-primary-600 hover:via-accent-coral hover:to-primary-700
-    shadow-[0_8px_30px_rgba(255,107,107,0.4)] hover:shadow-[0_12px_40px_rgba(255,107,107,0.6)]
+    shadow-[0_8px_30px_rgba(255,107,157,0.4)] hover:shadow-[0_12px_40px_rgba(255,107,157,0.6)]
     transform hover:-translate-y-1 hover:scale-105
     transition-all duration-300 
     focus:outline-none focus:ring-4 focus:ring-primary/30
@@ -88,11 +88,11 @@
   }
 
   .hero-gradient {
-    @apply bg-gradient-to-br from-primary-100/60 via-accent-warm/40 to-accent-pink/30;
+    @apply bg-gradient-to-br from-background-sakura/60 via-accent-sakura/40 to-accent-pink/30;
   }
 
   .section-gradient {
-    @apply bg-gradient-to-br from-primary-100/30 via-white to-accent-warm/20;
+    @apply bg-gradient-to-br from-background-sakura/30 via-white to-accent-sakura/20;
   }
 }
 
@@ -107,11 +107,11 @@
 @keyframes pulse-glow {
   0%, 100% { 
     transform: scale(1); 
-    box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+    box-shadow: 0 0 20px rgba(255, 107, 157, 0.3);
   }
   50% { 
     transform: scale(1.05); 
-    box-shadow: 0 0 40px rgba(255, 107, 107, 0.6);
+    box-shadow: 0 0 40px rgba(255, 107, 157, 0.6);
   }
 }
 
@@ -172,7 +172,7 @@ html {
 }
 
 .stat-card {
-  @apply bg-gradient-to-br from-white via-primary-100/20 to-accent-warm/10
+  @apply bg-gradient-to-br from-white via-background-sakura/30 to-accent-sakura/20
          rounded-3xl p-8 border border-primary-100/30
          shadow-lg hover:shadow-2xl transition-all duration-500
          transform hover:-translate-y-2 hover:scale-105
@@ -211,12 +211,12 @@ html {
 /* Enhanced Backgrounds */
 .bg-pattern {
   background-image: 
-    radial-gradient(circle at 25% 25%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 75% 75%, rgba(255, 170, 153, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 25% 25%, rgba(255, 107, 157, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 204, 213, 0.1) 0%, transparent 50%);
 }
 
 .bg-dots {
-  background-image: radial-gradient(circle, rgba(255, 107, 107, 0.15) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(255, 107, 157, 0.15) 1px, transparent 1px);
   background-size: 20px 20px;
 }
 

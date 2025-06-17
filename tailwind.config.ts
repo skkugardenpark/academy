@@ -11,61 +11,63 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#FF6B6B',
-          light: '#FFE2E2',
-          dark: '#FF4444',
-          100: '#FFF5F5',
-          200: '#FFE2E2',
-          300: '#FFC9C9',
-          400: '#FFA8A8',
-          500: '#FF6B6B',
-          600: '#FF4444',
-          700: '#FF2D2D',
-          800: '#FF1A1A',
-          900: '#FF0000'
+          DEFAULT: '#FF6B9D',
+          light: '#FFE4E1',
+          dark: '#FF4C8A',
+          100: '#FFF5F7',
+          200: '#FFECEC',
+          300: '#FFD6DB',
+          400: '#FFB8C5',
+          500: '#FF6B9D',
+          600: '#FF4C8A',
+          700: '#FF2D77',
+          800: '#E6246A',
+          900: '#CC1A5D'
         },
         accent: {
-          peach: '#FFAA99',
-          coral: '#FF8576',
-          rose: '#FF6B6B',
+          peach: '#FFCCD5',
+          coral: '#FFB3C1',
+          rose: '#FF9FB7',
           pink: '#FF8FA3',
-          warm: '#FFB4A2'
+          warm: '#FFAAB5',
+          sakura: '#FFECEC'
         },
         neutral: {
-          50: '#FEF7F7',
-          100: '#FDF2F2',
-          200: '#FCE7E7',
-          300: '#F9D5D5',
-          400: '#F3B1B1',
-          500: '#E78B8B',
-          600: '#D66B6B',
-          700: '#B85555',
-          800: '#8F4444',
-          900: '#6B3333'
+          50: '#FFF8F9',
+          100: '#FFF0F2',
+          200: '#FFE4E7',
+          300: '#FFD1D6',
+          400: '#FFAAB5',
+          500: '#FF8FA3',
+          600: '#FF6B9D',
+          700: '#E6246A',
+          800: '#CC1A5D',
+          900: '#B31750'
         },
         background: {
           light: '#FFFFFF',
-          DEFAULT: '#FEF7F7',
-          dark: '#FDF2F2',
-          warm: '#FFF5F5',
-          cream: '#FDF2F2'
+          DEFAULT: '#FFF8F9',
+          dark: '#FFF0F2',
+          warm: '#FFF5F7',
+          cream: '#FFECEC',
+          sakura: '#FFE4E1'
         },
         warm: {
-          50: '#FEF7F7',
-          100: '#FDF2F2',
-          200: '#FCE7E7',
-          300: '#F9D5D5',
-          400: '#F3B1B1',
-          500: '#E78B8B',
-          600: '#D66B6B',
-          700: '#B85555',
-          800: '#8F4444',
-          900: '#6B3333'
+          50: '#FFF8F9',
+          100: '#FFF0F2',
+          200: '#FFE4E7',
+          300: '#FFD1D6',
+          400: '#FFAAB5',
+          500: '#FF8FA3',
+          600: '#FF6B9D',
+          700: '#E6246A',
+          800: '#CC1A5D',
+          900: '#B31750'
         },
         mint: '#A8E6CF',
         'mint-light': '#D4F5E9',
-        dark: '#B85555',
-        'dark-light': '#E78B8B',
+        dark: '#E6246A',
+        'dark-light': '#FF8FA3',
         gold: {
           DEFAULT: '#D4AF37',
           light: '#F4E9C1',
@@ -93,12 +95,12 @@ const config: Config = {
         '9xl': '96rem',
       },
       boxShadow: {
-        'soft': '0 4px 14px 0 rgba(184, 85, 85, 0.08)',
-        'glass': '0 8px 32px 0 rgba(255, 107, 107, 0.15)',
-        'glow': '0 0 20px rgba(255, 107, 107, 0.2)',
-        'glow-strong': '0 0 30px rgba(255, 107, 107, 0.3)',
-        'inner-glow': 'inset 0 0 20px rgba(255, 107, 107, 0.1)',
-        'warm': '0 4px 14px 0 rgba(184, 85, 85, 0.12)'
+        'soft': '0 4px 14px 0 rgba(230, 36, 106, 0.08)',
+        'glass': '0 8px 32px 0 rgba(255, 107, 157, 0.15)',
+        'glow': '0 0 20px rgba(255, 107, 157, 0.2)',
+        'glow-strong': '0 0 30px rgba(255, 107, 157, 0.3)',
+        'inner-glow': 'inset 0 0 20px rgba(255, 107, 157, 0.1)',
+        'warm': '0 4px 14px 0 rgba(230, 36, 106, 0.12)'
       },
       backdropBlur: {
         'glass': '8px',
@@ -142,7 +144,7 @@ const config: Config = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-warm': 'linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(255, 170, 153, 0.1) 100%)',
+        'gradient-warm': 'linear-gradient(135deg, rgba(255, 107, 157, 0.1) 0%, rgba(255, 204, 213, 0.1) 100%)',
         'shimmer': 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%)',
         'grid': "url('/patterns/grid.svg')"
       },
@@ -154,7 +156,7 @@ const config: Config = {
   ],
   safelist: [
     {
-      pattern: /(bg|text|border)-(primary|accent|neutral|warm)-(light|dark|DEFAULT|50|100|200|300|400|500|600|700|800|900|peach|coral|rose|pink|warm)/,
+      pattern: /(bg|text|border)-(primary|accent|neutral|warm)-(light|dark|DEFAULT|50|100|200|300|400|500|600|700|800|900|peach|coral|rose|pink|warm|sakura)/,
       variants: ['hover', 'focus'],
     },
     {
