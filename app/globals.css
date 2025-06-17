@@ -8,7 +8,7 @@
     font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    @apply bg-gradient-to-br from-primary-50 via-white to-accent-warm/20;
+    @apply bg-gradient-to-br from-primary-100 via-white to-accent-warm/20;
   }
 }
 
@@ -60,7 +60,7 @@
   .btn-secondary {
     @apply inline-flex items-center px-8 py-4 rounded-full font-semibold
     bg-white text-primary border-2 border-primary/30
-    hover:bg-gradient-to-r hover:from-primary-50 hover:to-accent-warm/30
+    hover:bg-gradient-to-r hover:from-primary-100 hover:to-accent-warm/30
     hover:border-primary hover:text-primary-700
     shadow-lg hover:shadow-xl transform hover:-translate-y-1
     transition-all duration-300
@@ -92,7 +92,7 @@
   }
 
   .section-gradient {
-    @apply bg-gradient-to-br from-primary-50/30 via-white to-accent-warm/20;
+    @apply bg-gradient-to-br from-primary-100/30 via-white to-accent-warm/20;
   }
 }
 
