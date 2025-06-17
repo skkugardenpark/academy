@@ -155,8 +155,8 @@ html {
 
 /* Enhanced Card Styles */
 .feature-card {
-  @apply bg-gradient-to-br from-white via-background-sakura/10 to-accent-sakura/5 
-         rounded-3xl p-8 shadow-lg hover:shadow-2xl 
+  background: #F3DEE1 !important;
+  @apply rounded-3xl p-8 shadow-lg hover:shadow-2xl 
          border border-primary-100/20 hover:border-primary-200/30
          transition-all duration-500 transform hover:-translate-y-3 hover:scale-[1.02]
          relative overflow-hidden;
@@ -181,7 +181,8 @@ html {
 }
 
 .testimonial-card {
-  @apply bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl
+  background: #F3DEE1 !important;
+  @apply rounded-3xl p-8 shadow-lg hover:shadow-2xl
          border border-primary-100/30 hover:border-primary-200/50
          transition-all duration-500 transform hover:-translate-y-2
          relative overflow-hidden;

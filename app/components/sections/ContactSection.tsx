@@ -194,9 +194,10 @@ export default function ContactSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.1 * index }}
-                  className={`feature-card cursor-pointer transition-all duration-300 ${
-                    selectedMethod === index ? 'ring-2 ring-primary shadow-xl scale-105 bg-primary/5' : ''
+                  className={`cursor-pointer transition-all duration-300 rounded-3xl p-8 shadow-lg hover:shadow-2xl border border-primary-100/20 hover:border-primary-200/30 transform hover:-translate-y-3 hover:scale-[1.02] relative overflow-hidden ${
+                    selectedMethod === index ? 'ring-2 ring-primary shadow-xl scale-105' : ''
                   }`}
+                  style={{ background: '#F3DEE1' }}
                   onClick={() => setSelectedMethod(index)}
                 >
                   <div className="flex items-start space-x-4">
@@ -219,7 +220,8 @@ export default function ContactSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                className="feature-card"
+                className="rounded-3xl p-8 shadow-lg hover:shadow-2xl border border-primary-100/20 hover:border-primary-200/30 transform hover:-translate-y-3 hover:scale-[1.02] relative overflow-hidden"
+                style={{ background: '#F3DEE1' }}
               >
                 <h4 className="font-bold text-warm-800 mb-4 flex items-center">
                   <span className="text-2xl mr-3">📍</span>
@@ -253,7 +255,7 @@ export default function ContactSection() {
               transition={{ duration: 0.8 }}
               className="lg:col-span-3"
             >
-              <div className="feature-card">
+              <div className="rounded-3xl p-8 shadow-lg hover:shadow-2xl border border-primary-100/20 hover:border-primary-200/30 transform hover:-translate-y-3 hover:scale-[1.02] relative overflow-hidden" style={{ background: '#F3DEE1' }}>
                 <div className="flex items-center justify-between mb-8">
                   <h3 className="text-2xl font-bold text-warm-800">
                     🎯 무료 상담 신청
