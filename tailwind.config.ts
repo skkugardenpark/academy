@@ -32,40 +32,40 @@ const config: Config = {
           warm: '#FFB4A2'
         },
         neutral: {
-          50: '#FEFCFB',
-          100: '#FDF8F6',
-          200: '#F7F0ED',
-          300: '#EDE4DF',
-          400: '#D6C4BA',
-          500: '#B8A394',
-          600: '#9A8171',
-          700: '#7D6555',
-          800: '#5D4A3A',
-          900: '#3E2F23'
+          50: '#FEF7F7',
+          100: '#FDF2F2',
+          200: '#FCE7E7',
+          300: '#F9D5D5',
+          400: '#F3B1B1',
+          500: '#E78B8B',
+          600: '#D66B6B',
+          700: '#B85555',
+          800: '#8F4444',
+          900: '#6B3333'
         },
         background: {
           light: '#FFFFFF',
-          DEFAULT: '#FEFCFB',
-          dark: '#FDF8F6',
+          DEFAULT: '#FEF7F7',
+          dark: '#FDF2F2',
           warm: '#FFF5F5',
-          cream: '#FDF8F6'
+          cream: '#FDF2F2'
         },
         warm: {
-          50: '#FEFCFB',
-          100: '#FDF8F6',
-          200: '#F7F0ED',
-          300: '#EDE4DF',
-          400: '#D6C4BA',
-          500: '#B8A394',
-          600: '#9A8171',
-          700: '#7D6555',
-          800: '#5D4A3A',
-          900: '#3E2F23'
+          50: '#FEF7F7',
+          100: '#FDF2F2',
+          200: '#FCE7E7',
+          300: '#F9D5D5',
+          400: '#F3B1B1',
+          500: '#E78B8B',
+          600: '#D66B6B',
+          700: '#B85555',
+          800: '#8F4444',
+          900: '#6B3333'
         },
         mint: '#A8E6CF',
         'mint-light': '#D4F5E9',
-        dark: '#7D6555',
-        'dark-light': '#B8A394',
+        dark: '#B85555',
+        'dark-light': '#E78B8B',
         gold: {
           DEFAULT: '#D4AF37',
           light: '#F4E9C1',
@@ -93,12 +93,12 @@ const config: Config = {
         '9xl': '96rem',
       },
       boxShadow: {
-        'soft': '0 4px 14px 0 rgba(125, 101, 85, 0.08)',
+        'soft': '0 4px 14px 0 rgba(184, 85, 85, 0.08)',
         'glass': '0 8px 32px 0 rgba(255, 107, 107, 0.15)',
         'glow': '0 0 20px rgba(255, 107, 107, 0.2)',
         'glow-strong': '0 0 30px rgba(255, 107, 107, 0.3)',
         'inner-glow': 'inset 0 0 20px rgba(255, 107, 107, 0.1)',
-        'warm': '0 4px 14px 0 rgba(125, 101, 85, 0.12)'
+        'warm': '0 4px 14px 0 rgba(184, 85, 85, 0.12)'
       },
       backdropBlur: {
         'glass': '8px',

@@ -64,10 +64,11 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="hero-title"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-warm-900"
+              style={{ textShadow: '2px 2px 4px rgba(255,255,255,0.8)' }}
             >
               영어로 <br />
-              <span className="relative">
+              <span className="relative text-primary">
                 세상과 소통하세요
                 <motion.div
                   className="absolute -bottom-2 left-0 w-full h-3 bg-gradient-to-r from-primary/30 to-accent-coral/30 rounded-full"
