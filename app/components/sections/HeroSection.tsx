@@ -3,13 +3,13 @@ import { motion } from 'framer-motion'
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary-light/30 to-accent-peach/20">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary-100 to-accent-warm/30">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[url('/patterns/hero-pattern.svg')] opacity-5" />
       
       {/* Animated Background Elements */}
       <motion.div
-        className="absolute top-20 -left-32 w-64 h-64 bg-primary/10 rounded-full blur-3xl"
+        className="absolute top-20 -left-32 w-64 h-64 bg-primary-200/50 rounded-full blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -21,7 +21,7 @@ export default function HeroSection() {
         }}
       />
       <motion.div
-        className="absolute bottom-20 -right-32 w-64 h-64 bg-accent-coral/10 rounded-full blur-3xl"
+        className="absolute bottom-20 -right-32 w-64 h-64 bg-accent-peach/30 rounded-full blur-3xl"
         animate={{
           scale: [1.2, 1, 1.2],
           opacity: [0.3, 0.5, 0.3],
@@ -43,7 +43,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="text-primary-dark">영어의 새로운 시작</span>
+              <span className="text-primary-600">영어의 새로운 시작</span>
             </motion.h1>
             
             <motion.p 
@@ -63,10 +63,10 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <button className="bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-full transition-all shadow-soft">
+              <button className="bg-primary hover:bg-primary-600 text-white px-8 py-3 rounded-full transition-all shadow-soft">
                 무료 레벨 테스트
               </button>
-              <button className="bg-white text-primary hover:bg-primary-light/50 px-8 py-3 rounded-full border-2 border-primary transition-all">
+              <button className="bg-white text-primary hover:bg-primary-100 px-8 py-3 rounded-full border-2 border-primary transition-all">
                 커리큘럼 살펴보기
               </button>
             </motion.div>
@@ -83,7 +83,7 @@ export default function HeroSection() {
               {/* 3D Floating Elements */}
               <div className="absolute inset-0">
                 <motion.div
-                  className="absolute top-0 left-0 w-32 h-32 bg-primary-light rounded-2xl shadow-soft"
+                  className="absolute top-0 left-0 w-32 h-32 bg-primary-200 rounded-2xl shadow-soft"
                   animate={{
                     y: [0, -20, 0],
                     rotate: [0, 10, 0],
@@ -95,7 +95,7 @@ export default function HeroSection() {
                   }}
                 />
                 <motion.div
-                  className="absolute top-1/4 right-1/4 w-40 h-40 bg-accent-coral/20 rounded-full shadow-soft"
+                  className="absolute top-1/4 right-1/4 w-40 h-40 bg-accent-peach/30 rounded-full shadow-soft"
                   animate={{
                     y: [-20, 0, -20],
                     rotate: [10, 0, 10],
@@ -107,7 +107,7 @@ export default function HeroSection() {
                   }}
                 />
                 <motion.div
-                  className="absolute bottom-1/3 left-1/3 w-36 h-36 bg-accent-peach/30 rounded-3xl shadow-soft"
+                  className="absolute bottom-1/3 left-1/3 w-36 h-36 bg-accent-warm/40 rounded-3xl shadow-soft"
                   animate={{
                     y: [10, -10, 10],
                     rotate: [-5, 5, -5],
@@ -128,8 +128,8 @@ export default function HeroSection() {
                 className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-soft"
               >
                 <div className="flex items-center gap-4">
-                  <div className="bg-primary-light p-3 rounded-lg">
-                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="bg-primary-100 p-3 rounded-lg">
+                    <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -148,8 +148,8 @@ export default function HeroSection() {
                 className="absolute -left-6 top-1/2 bg-white p-6 rounded-xl shadow-soft"
               >
                 <div className="flex items-center gap-4">
-                  <div className="bg-accent-peach p-3 rounded-lg">
-                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="bg-accent-warm p-3 rounded-lg">
+                    <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
                   </div>

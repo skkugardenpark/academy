@@ -12,18 +12,23 @@ const config: Config = {
         primary: {
           DEFAULT: '#FF6B6B',
           light: '#FFE2E2',
-          dark: '#FF4444'
-        },
-        secondary: {
-          DEFAULT: '#F8F9FA',
-          light: '#FFFFFF',
-          dark: '#E9ECEF'
+          dark: '#FF4444',
+          100: '#FFF5F5',
+          200: '#FFE2E2',
+          300: '#FFC9C9',
+          400: '#FFA8A8',
+          500: '#FF6B6B',
+          600: '#FF4444',
+          700: '#FF2D2D',
+          800: '#FF1A1A',
+          900: '#FF0000'
         },
         accent: {
-          red: '#FF8787',
-          pink: '#FFA5A5',
-          coral: '#FFB8B8',
-          peach: '#FFD8D8'
+          peach: '#FFAA99',
+          coral: '#FF8576',
+          rose: '#FF6B6B',
+          pink: '#FF8FA3',
+          warm: '#FFB4A2'
         },
         neutral: {
           50: '#F8F9FA',
@@ -40,7 +45,8 @@ const config: Config = {
         background: {
           light: '#FFFFFF',
           DEFAULT: '#F8F9FA',
-          dark: '#E9ECEF'
+          dark: '#E9ECEF',
+          warm: '#FFF5F5'
         },
         mint: '#A8E6CF',
         'mint-light': '#D4F5E9',
@@ -74,8 +80,7 @@ const config: Config = {
       },
       boxShadow: {
         'soft': '0 4px 14px 0 rgba(0, 0, 0, 0.05)',
-        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.15)',
-        'shadow-glass': '0 8px 32px 0 rgba(31, 38, 135, 0.15)',
+        'glass': '0 8px 32px 0 rgba(255, 107, 107, 0.15)',
         'glow': '0 0 20px rgba(255, 107, 107, 0.2)',
         'glow-strong': '0 0 30px rgba(255, 107, 107, 0.3)',
         'inner-glow': 'inset 0 0 20px rgba(255, 107, 107, 0.1)'
@@ -122,7 +127,7 @@ const config: Config = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-glass': 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
+        'gradient-warm': 'linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(255, 170, 153, 0.1) 100%)',
         'shimmer': 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%)',
         'grid': "url('/patterns/grid.svg')"
       },
@@ -134,7 +139,7 @@ const config: Config = {
   ],
   safelist: [
     {
-      pattern: /(bg|text|border)-(primary|secondary|accent|neutral)-(light|dark|DEFAULT|50|100|200|300|400|500|600|700|800|900)/,
+      pattern: /(bg|text|border)-(primary|accent|neutral)-(light|dark|DEFAULT|50|100|200|300|400|500|600|700|800|900|peach|coral|rose|pink|warm)/,
       variants: ['hover', 'focus'],
     },
   ],
