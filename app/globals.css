@@ -172,7 +172,7 @@ html {
 }
 
 .stat-card {
-  @apply bg-gradient-to-br from-white via-primary-50/20 to-accent-warm/10
+  @apply bg-gradient-to-br from-white via-primary-100/20 to-accent-warm/10
          rounded-3xl p-8 border border-primary-100/30
          shadow-lg hover:shadow-2xl transition-all duration-500
          transform hover:-translate-y-2 hover:scale-105
