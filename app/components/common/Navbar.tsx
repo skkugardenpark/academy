@@ -45,7 +45,11 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-secondary/60 backdrop-blur-sm">
+    <nav 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-white/80 backdrop-blur-sm shadow-sm' : 'bg-transparent'
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -55,32 +59,32 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="#about" className="text-dark hover:text-primary transition-colors">
+            <Link href="#about" className="text-neutral-700 hover:text-primary transition-colors">
               학원소개
             </Link>
-            <Link href="#curriculum" className="text-dark hover:text-primary transition-colors">
+            <Link href="#curriculum" className="text-neutral-700 hover:text-primary transition-colors">
               커리큘럼
             </Link>
-            <Link href="#instructors" className="text-dark hover:text-primary transition-colors">
+            <Link href="#instructors" className="text-neutral-700 hover:text-primary transition-colors">
               강사진
             </Link>
-            <Link href="#gallery" className="text-dark hover:text-primary transition-colors">
+            <Link href="#gallery" className="text-neutral-700 hover:text-primary transition-colors">
               갤러리
             </Link>
-            <Link href="#contact" className="text-dark hover:text-primary transition-colors">
+            <Link href="#contact" className="text-neutral-700 hover:text-primary transition-colors">
               수강신청
             </Link>
-            <Link href="#faq" className="text-dark hover:text-primary transition-colors">
+            <Link href="#faq" className="text-neutral-700 hover:text-primary transition-colors">
               FAQ
             </Link>
-            <Link href="#location" className="text-dark hover:text-primary transition-colors">
+            <Link href="#location" className="text-neutral-700 hover:text-primary transition-colors">
               오시는길
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-dark hover:text-primary transition-colors"
+            className="md:hidden text-neutral-700 hover:text-primary transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
@@ -101,7 +105,7 @@ export default function Navbar() {
           `}>
             <div className="flex flex-col p-8">
               <button
-                className="self-end text-dark hover:text-primary transition-colors mb-8"
+                className="self-end text-neutral-700 hover:text-primary transition-colors mb-8"
                 onClick={() => setIsOpen(false)}
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,49 +115,49 @@ export default function Navbar() {
               <div className="flex flex-col space-y-6">
                 <Link
                   href="#about"
-                  className="text-dark hover:text-primary transition-colors text-lg"
+                  className="text-neutral-700 hover:text-primary transition-colors text-lg"
                   onClick={() => setIsOpen(false)}
                 >
                   학원소개
                 </Link>
                 <Link
                   href="#curriculum"
-                  className="text-dark hover:text-primary transition-colors text-lg"
+                  className="text-neutral-700 hover:text-primary transition-colors text-lg"
                   onClick={() => setIsOpen(false)}
                 >
                   커리큘럼
                 </Link>
                 <Link
                   href="#instructors"
-                  className="text-dark hover:text-primary transition-colors text-lg"
+                  className="text-neutral-700 hover:text-primary transition-colors text-lg"
                   onClick={() => setIsOpen(false)}
                 >
                   강사진
                 </Link>
                 <Link
                   href="#gallery"
-                  className="text-dark hover:text-primary transition-colors text-lg"
+                  className="text-neutral-700 hover:text-primary transition-colors text-lg"
                   onClick={() => setIsOpen(false)}
                 >
                   갤러리
                 </Link>
                 <Link
                   href="#contact"
-                  className="text-dark hover:text-primary transition-colors text-lg"
+                  className="text-neutral-700 hover:text-primary transition-colors text-lg"
                   onClick={() => setIsOpen(false)}
                 >
                   수강신청
                 </Link>
                 <Link
                   href="#faq"
-                  className="text-dark hover:text-primary transition-colors text-lg"
+                  className="text-neutral-700 hover:text-primary transition-colors text-lg"
                   onClick={() => setIsOpen(false)}
                 >
                   FAQ
                 </Link>
                 <Link
                   href="#location"
-                  className="text-dark hover:text-primary transition-colors text-lg"
+                  className="text-neutral-700 hover:text-primary transition-colors text-lg"
                   onClick={() => setIsOpen(false)}
                 >
                   오시는길
