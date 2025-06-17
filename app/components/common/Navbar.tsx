@@ -61,7 +61,7 @@ export default function Navbar() {
             <Link href="#curriculum" className="text-dark hover:text-primary transition-colors">
               커리큘럼
             </Link>
-            <Link href="#teachers" className="text-dark hover:text-primary transition-colors">
+            <Link href="#instructors" className="text-dark hover:text-primary transition-colors">
               강사진
             </Link>
             <Link href="#gallery" className="text-dark hover:text-primary transition-colors">
@@ -124,7 +124,7 @@ export default function Navbar() {
                   커리큘럼
                 </Link>
                 <Link
-                  href="#teachers"
+                  href="#instructors"
                   className="text-dark hover:text-primary transition-colors text-lg"
                   onClick={() => setIsOpen(false)}
                 >
